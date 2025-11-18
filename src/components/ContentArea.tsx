@@ -11,7 +11,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
         return {
           title: "INTRODUCCIÓN AL MANUAL",
           content: [
-            "El stupido manual técnico tiene como objetivo proporcionar una guía completa y detallada para el mantenimiento de equipos computacionales en entornos institucionales. Este documento ha sido elaborado considerando las mejores prácticas de la industria y las necesidades específicas de nuestra comunidad educativa.",
+            "El presente manual técnico tiene como objetivo proporcionar una guía completa y detallada para el mantenimiento de equipos computacionales en entornos institucionales. Este documento ha sido elaborado considerando las mejores prácticas de la industria y las necesidades específicas de nuestra comunidad educativa.",
             "A través de este manual, se busca establecer procedimientos estandarizados que permitan mantener en óptimas condiciones el equipamiento tecnológico, prolongar su vida útil y garantizar su funcionamiento eficiente.",
             "El manual está dirigido tanto a personal técnico especializado como a usuarios que requieran conocimientos básicos sobre el cuidado y mantenimiento preventivo de equipos computacionales.",
           ],
@@ -132,6 +132,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "INVESTIGACIÓN Y CONTENIDO: Encargado de la recopilación y redacción de información técnica actualizada.",
             "DISEÑO Y FORMATO: Responsable de la presentación visual y organización del contenido para facilitar su consulta.",
             "Agradecemos a todos los miembros del equipo por su dedicación y compromiso en la elaboración de este importante recurso para nuestra comunidad universitaria.",
+            "Los Desarrolladore son: Jose Palencia",
           ],
         };
 
