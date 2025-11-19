@@ -26,7 +26,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
             
           ],
-          tiltle: "rese uwu",
+          title: "rese uwu",
         };
 
       case "mantenimiento":
