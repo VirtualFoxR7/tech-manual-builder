@@ -295,7 +295,7 @@ content: [
 
 "‎¿QUÉ SON?: Elementos físicos dentro del computador, como resistencias, transistores y circuitos integrados, que controlan y procesan señales eléctricas para el funcionamiento del equipo.",
 ‎
-‎“MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos).",
+‎"MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos).",
 ‎
 ‎"UNIDAD CD Y DVD",
 
