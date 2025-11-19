@@ -159,19 +159,19 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           content: [
             "Para llevar a cabo las tareas antes mencionadas en el punto anterior, las herramientas requeridas serán:",
 
-"1. Set de destornilladores de precisión",
+"* Set de destornilladores de precisión",
 
-"2. Juego de brochas de tamaños distintos",
+"* Juego de brochas de tamaños distintos",
 
-"3. Alcohol isopropílico/Limpiador de contactos electrónicos",
+"* Alcohol isopropílico/Limpiador de contactos electrónicos",
 
-"5. Paño suave“,
+"* Paño suave“,
 
-"6. Mascarilla",
+"* Mascarilla",
 
-"7. Pulsera anti-estática",
+"* Pulsera anti-estática",
 
-"8. Guantes",
+"* Guantes",
           ],
         };
 
