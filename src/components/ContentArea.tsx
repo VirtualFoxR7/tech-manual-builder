@@ -232,90 +232,63 @@ content: [
         };
 
       case "componentes":
-        return {
-          title: "COMPONENTES",
-          content: [
+  return {
+    title: "COMPONENTES",
+    content: [
+      "GABINETE (CASE)",
+      "¿QUÉ ES?: Es una carcasa que contiene y protege físicamente los componentes internos de una computadora. Proporciona estructura y soporte, además de permitir la ventilación adecuada para el equipo.",
+      "MODO DE LIMPIEZA: Apagar y desconectar el equipo. Abrir la carcasa con cuidado. Usar aire comprimido para eliminar polvo en zonas internas, ventiladores y componentes. Limpieza con paño de micro-fibra para superficies sin contacto eléctrico. Evitar tocar circuitos directamente.",
 
-"GABINETE (CASE)",
+      "PLACA MADRE",
+      "¿QUÉ ES?: Tarjeta principal que conecta y permite la comunicación entre todos los componentes internos del computador, incluyendo CPU, memoria, tarjetas de expansión y dispositivos de almacenamiento. Contiene circuitos, chips y conectores esenciales para el funcionamiento del equipo.",
+      "MODO DE LIMPIEZA: Retirar cuidadosamente la placa madre del case. Usar aire comprimido para remover polvo de circuitos y ranuras. Limpieza con cepillo suave para áreas difíciles. Limpiar contactos con goma de borrar blanca. Evitar humedad y golpes.",
 
-"¿QUÉ ES?:Es una carcasa que contiene y protege físicamente los componentes internos de una computadora. Proporciona estructura y soporte, además de permitir la ventilación adecuada para el equipo.",
+      "FUENTE DE PODER",
+      "¿QUÉ ES?: Componente que suministra energía eléctrica a todos los demás componentes del computador, transformando la electricidad de la red en voltajes adecuados y estables para cada parte. Suele incluir ventilador y rejillas por donde puede acumularse polvo.",
+      "MODO DE LIMPIEZA: Apagar, desconectar y no abrir la fuente. Usar aire comprimido para eliminar polvo de ventilador y rejillas. Limpiar exterior con paño seco o ligeramente humedecido.",
 
-"‎MODO DE LIMPIEZA: Apagar y desconectar el equipo. Abrir la carcasa con cuidado. Usar aire comprimido para eliminar polvo en zonas internas, ventiladores y componentes. Limpieza con paño de micro-fibra para superficies sin contacto eléctrico. Evitar tocar circuitos directamente.",
+      "TARJETA DE EXPANSIÓN",
+      "¿QUÉ ES?: Placas adicionales que se instalan en la placa madre para agregar funcionalidades como audio, video, o redes, usando ranuras especiales.",
+      "MODO DE LIMPIEZA: Retirar la tarjeta con cuidado. Usar aire comprimido para polvo. Limpiar contactos con goma de borrar. Cepillar suavemente zonas con suciedad. Volver a instalar con firmeza.",
 
-"PLACA MADRE",
+      "MEMORIA RAM",
+      "¿QUÉ ES?: Módulos de memoria temporal que almacenan datos de trabajo para acceso rápido por la CPU.",
+      "MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los 'dientes' del chips con los dedos.",
 
-"¿QUÉ ES?: Tarjeta principal que conecta y permite la comunicación entre todos los componentes internos del computador, incluyendo CPU, memoria, tarjetas de expansión y dispositivos de almacenamiento. Contiene circuitos, chips y conectores esenciales para el funcionamiento del equipo.",
+      "PROCESADOR (CPU)",
+      "¿QUÉ ES?: Unidad central de procesamiento que ejecuta las instrucciones y procesos del sistema operativo y programas.",
+      "MODO DE LIMPIEZA: Retirar disipador y ventilador con cuidado. Limpiar con aire comprimido. Cambiar pasta térmica para mejorar disipación. Evitar tocar la superficie del chip.",
 
-‎"MODO DE LIMPIEZA: Retirar cuidadosamente la placa madre del case. Usar aire comprimido para remover polvo de circuitos y ranuras. Limpieza con cepillo suave para áreas difíciles. Limpiar contactos con goma de borrar blanca. Evitar humedad y golpes.",
+      "DISCO DURO",
+      "¿QUÉ ES?: Dispositivo de almacenamiento permanente donde se guardan datos, programas y el sistema operativo. Existen varios tipos, el HDD (Hard Disk Drive) SSD (Solid State Drive) y M.2 o NGFF (Next Generation Form Factor)",
+      "MODO DE LIMPIEZA: Limpiar solo el exterior con paño suavemente humedecido. Usar aire comprimido en conectores externos. (No abrir el disco duro).",
 
-"FUENTE DE PODER",
+      "PUERTOS Y RANURAS",
+      "¿QUÉ SON?: Conectores externos (puertos) y slots internos (ranuras) que permiten la conexión de dispositivos periféricos y tarjetas de expansión a la computadora.",
+      "MODO DE LIMPIEZA: Usar aire comprimido y cepillo fino para polvo incrustado. Evitar humedad directa.",
 
-"‎¿QUÉ ES?: Componente que suministra energía eléctrica a todos los demás componentes del computador, transformando la electricidad de la red en voltajes adecuados y estables para cada parte. Suele incluir ventilador y rejillas por donde puede acumularse polvo.",
+      "COMPONENTES ELÉCTRICOS",
+      "¿QUÉ SON?: Elementos físicos dentro del computador, como resistencias, transistores y circuitos integrados, que controlan y procesan señales eléctricas para el funcionamiento del equipo.",
+      "MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos).",
 
-"‎MODO DE LIMPIEZA: Apagar, desconectar y no abrir la fuente. Usar aire comprimido para eliminar polvo de ventilador y rejillas. Limpiar exterior con paño seco o ligeramente humedecido.",
+      "UNIDAD CD Y DVD",
+      "¿QUÉ ES?: Dispositivos ópticos que leen y/o graban datos en discos compactos (CD) y discos digitales versátiles (DVD), usados para almacenar y acceder a información.",
+      "MODO DE LIMPIEZA: Limpiar exterior con paño humedecido. Aire comprimido en el interior si se abre. Evitar líquidos dentro.",
 
-"TARJETA DE EXPANSIÓN",
+      "CABLES Y BUSES",
+      "¿QUÉ SON?: Medios físicos (cables) y vías de comunicación internas (buses) que transmiten datos y energía entre los componentes del ordenador.",
+      "MODO DE LIMPIEZA: Paño seco o ligeramente humedecido. Verificar conexiones sin polvo.",
 
-"¿QUÉ ES?: Placas adicionales que se instalan en la placa madre para agregar funcionalidades como audio, video, o redes, usando ranuras especiales.",
+      "CARCASA DEL GABINETE (CASE)",
+      "¿QUÉ ES?: Estructura externa que protege y da forma al equipo. Puede ser de metal o plástico.",
+      "MODO DE LIMPIEZA: Paño humedecido para exterior. Aire comprimido en rejillas y ventiladores.",
 
-‎"MODO DE LIMPIEZA: Retirar la tarjeta con cuidado. Usar aire comprimido para polvo. Limpiar contactos con goma de borrar. Cepillar suavemente zonas con suciedad. Volver a instalar con firmeza.",
+      "ENSAMBLE INTERNO Y EXTERNO DEL CASE",
+      "¿QUÉ ES?: Conjunto físico de piezas internas y externas del gabinete.",
+      "MODO DE LIMPIEZA: Aire comprimido interno y paño húmedo externo. Revisión y ajuste de tornillos."
+    ],
+  };
 
-"MEMORIA RAM",
-
-‎"¿QUÉ ES?: Módulos de memoria temporal que almacenan datos de trabajo para acceso rápido por la CPU.",
-
-‎"MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los 'dientes' del chips con los dedos.",
-
-"PROCESADOR (CPU)",
-
-"¿QUÉ ES?: Unidad central de procesamiento que ejecuta las instrucciones y procesos del sistema operativo y programas.",
-
-‎"MODO DE LIMPIEZA: Retirar disipador y ventilador con cuidado. Limpiar con aire comprimido. Cambiar pasta térmica para mejorar disipación. Evitar tocar la superficie del chip.",
-
-"DISCO DURO",
-
-‎"¿QUÉ ES?: Dispositivo de almacenamiento permanente donde se guardan datos, programas y el sistema operativo. Existen varios tipos, el HDD (Hard Disk Drive) SSD (Solid State Drive) y M.2 o NGFF (Next Generation Form Factor)",
-
-‎"MODO DE LIMPIEZA: Limpiar solo el exterior con paño suavemente humedecido. Usar aire comprimido en conectores externos. (No abrir el disco duro).",
-
-"PUERTOS Y RANURAS",
-
-"‎¿QUÉ SON?: Conectores externos (puertos) y slots internos (ranuras) que permiten la conexión de dispositivos periféricos y tarjetas de expansión a la computadora.",
-
-"‎MODO DE LIMPIEZA: Usar aire comprimido y cepillo fino para polvo incrustado. Evitar humedad directa.",
-
-"COMPONENTES ELÉCTRICOS",
-
-"‎¿QUÉ SON?: Elementos físicos dentro del computador, como resistencias, transistores y circuitos integrados, que controlan y procesan señales eléctricas para el funcionamiento del equipo.",
-
-‎"MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos).",
-
-‎"UNIDAD CD Y DVD",
-
-‎"¿QUÉ ES?: Dispositivos ópticos que leen y/o graban datos en discos compactos (CD) y discos digitales versátiles (DVD), usados para almacenar y acceder a información.",
-
-‎"MODO DE LIMPIEZA: Limpiar exterior con paño humedecido. Aire comprimido en el interior si se abre. Evitar líquidos dentro.",
-
-"‎CABLES Y BUSES",
-
-‎"¿QUÉ SON?: Medios físicos (cables) y vías de comunicación internas (buses) que transmiten datos y energía entre los componentes del ordenador.",
-
-‎"MODO DE LIMPIEZA: Paño seco o ligeramente humedecido. Verificar conexiones sin polvo.",
-
-‎"CARCASA DEL GABINETE (CASE)",
-
-"‎¿QUÉ ES?: Estructura externa que protege y da forma al equipo. Puede ser de metal o plástico.",
-
-‎"MODO DE LIMPIEZA: Paño humedecido para exterior. Aire comprimido en rejillas y ventiladores.",
-
-
-"ENSAMBLE INTERNO Y EXTERNO DEL CASE",
-
-‎"¿QUÉ ES?: Conjunto físico de piezas internas y externas del gabinete.",
-
-"‎MODO DE LIMPIEZA: Aire comprimido interno y paño húmedo externo. Revisión y ajuste de tornillos.",
-          ],
-        };
 
       case "equipos-institucion":
         return {
