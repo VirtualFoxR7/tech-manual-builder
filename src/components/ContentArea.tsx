@@ -143,7 +143,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             " * Cambio de refrigeración tradicional a refrigeración liquida",
             "En lineas generales, este mantenimiento busca arreglar todo aquello que el mantenimiento preventivo no pudo evitar, corregir fallos graves y críticos, y dar solución a los problemas críticos que amenazan la funcionalidad del equipo.",
             "Mantenimiento Correctivo Software",
-            "En aspectos básicos se trata de mantener al día las actualizaciones del sistema operativo, programas de ofimática, de compresión, programación, seguridad y todo software dedicado para evitar las posibles vulnerabilidades, bugs, o bloqueos causados por la obsolescencia del software.",
+            "Al igual que en el hardware, el mantenimiento correctivo del software toma lugar para corregir fallos críticos que el mantenimiento de prevención no pudo evitar, consiste en procesos simples como la desinstalación del programa afectado para su posterior reinstalación o reemplazo por un programa distinto. Sin embargo, también engloba prácticas más complejas o invasivas como reinstalación del sistema operativo, formateo de disco duro, y configuración o actualización de la BIOS.",
           ],
         };
 
