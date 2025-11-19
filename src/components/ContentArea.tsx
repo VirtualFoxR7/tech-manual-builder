@@ -23,11 +23,9 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           content: [
             "La Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' es una institución de educación superior comprometida con la formación integral de profesionales en diversas áreas del conocimiento tecnológico y científico.",
             "Nuestra comunidad universitaria cuenta con modernos laboratorios de computación y equipamiento tecnológico de última generación, los cuales requieren un mantenimiento adecuado para garantizar su funcionamiento óptimo.",
-            "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
-            
-          ],
-          title: "rese uwu",
-        };
+          "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
+        ],
+      };
 
       case "mantenimiento":
         return {
