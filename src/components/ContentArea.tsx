@@ -9,6 +9,7 @@ import herramientas from "@/assets/herramientas.jpg";
 import seguridad from "@/assets/seguridad.jpg";
 import equipos from "@/assets/equipos.jpg";
 import componentes from "@/assets/componentes-1.jpg";
+import componentes2 from "@/assets/componentes-2.jpg";
 import equipoInstitucion1 from "@/assets/equipo-institucion-1.jpg";
 import equipoInstitucion2 from "@/assets/equipo-institucion-2.jpg";
 import equipoInstitucion3 from "@/assets/equipo-institucion-3.jpg";
@@ -44,7 +45,6 @@ const sectionImages: Record<string, string> = {
 // Special sections with multiple images
 const institutionImages = [universidadJardin, universidadEntrada];
 const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion4, equipoInstitucion3, equipoInstitucion7];
-
 
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
