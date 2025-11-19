@@ -165,7 +165,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
 
 "3. Alcohol isopropílico/Limpiador de contactos electrónicos",
 
-“5. Paño suave“,
+"5. Paño suave“,
 
 "6. Mascarilla",
 
