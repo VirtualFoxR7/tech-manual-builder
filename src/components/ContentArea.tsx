@@ -8,7 +8,8 @@ import herramientas from "@/assets/herramientas.jpg";
 import seguridad from "@/assets/seguridad.jpg";
 import equipos from "@/assets/equipos.jpg";
 import componentes from "@/assets/componentes.jpg";
-import equiposInstitucion from "@/assets/equipos-institucion.jpg";
+import equipoInstitucion1 from "@/assets/equipo-institucion-1.jpg";
+import equipoInstitucion2 from "@/assets/equipo-institucion-2.jpg";
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
 
 interface ContentAreaProps {
@@ -27,12 +28,13 @@ const sectionImages: Record<string, string> = {
   seguridad: seguridad,
   equipos: equipos,
   componentes: componentes,
-  "equipos-institucion": equiposInstitucion,
+  "equipos-institucion": equipoInstitucion1,
   "equipo-desarrollo": equipoDesarrollo,
 };
 
 // Special sections with multiple images
 const institutionImages = [universidadJardin, universidadEntrada];
+const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion2];
 
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const getContent = () => {
@@ -221,12 +223,30 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
 
         {/* Content Area */}
         <div className="space-y-6">
-          {/* Image(s) - Special handling for institution section */}
+          {/* Image(s) - Special handling for sections with multiple images */}
           {activeSection === "institucion" ? (
             <>
               {/* Two images grid for institution */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {institutionImages.map((img, idx) => (
+                  <img 
+                    key={idx}
+                    src={img} 
+                    alt={`${content.title} - Imagen ${idx + 1}`}
+                    className="w-full h-64 object-cover rounded-lg border border-border shadow-sm"
+                  />
+                ))}
+              </div>
+              {/* First paragraph below images */}
+              <p className="text-foreground leading-relaxed text-justify mb-6">
+                {content.content[0]}
+              </p>
+            </>
+          ) : activeSection === "equipos-institucion" ? (
+            <>
+              {/* Two images grid for equipos institucion */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {equiposInstitucionImages.map((img, idx) => (
                   <img 
                     key={idx}
                     src={img} 
