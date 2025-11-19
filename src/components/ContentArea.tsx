@@ -9,13 +9,15 @@ import herramientas from "@/assets/herramientas.jpg";
 import seguridad from "@/assets/seguridad.jpg";
 import equipos from "@/assets/equipos.jpg";
 import componentes from "@/assets/componentes.jpg";
+import componentes2 from "@/assets/componentes-1.jpg";
+import componentes3 from "@/assets/componentes-2.jpg";
 import equipoInstitucion1 from "@/assets/equipo-institucion-1.jpg";
 import equipoInstitucion2 from "@/assets/equipo-institucion-2.jpg";
 import equipoInstitucion3 from "@/assets/equipo-institucion-3.jpg";
-import equipoInstitucion3 from "@/assets/equipo-institucion-4.jpg";
-import equipoInstitucion3 from "@/assets/equipo-institucion-5.jpg";
-import equipoInstitucion3 from "@/assets/equipo-institucion-6.jpg";
-import equipoInstitucion3 from "@/assets/equipo-institucion-7.jpg";
+import equipoInstitucion4 from "@/assets/equipo-institucion-4.jpg";
+import equipoInstitucion5 from "@/assets/equipo-institucion-5.jpg";
+import equipoInstitucion6 from "@/assets/equipo-institucion-6.jpg";
+import equipoInstitucion7 from "@/assets/equipo-institucion-7.jpg";
 
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
 import { ImageModal } from "./ImageModal";
@@ -44,7 +46,7 @@ const sectionImages: Record<string, string> = {
 // Special sections with multiple images
 const institutionImages = [universidadJardin, universidadEntrada];
 const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion2];
-
+const componenteImagenes = [componentes2, componentes3];
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
