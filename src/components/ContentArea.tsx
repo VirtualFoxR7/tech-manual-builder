@@ -24,11 +24,9 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "La Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' es una institución de educación superior comprometida con la formación integral de profesionales en diversas áreas del conocimiento tecnológico y científico.",
             "Nuestra comunidad universitaria cuenta con modernos laboratorios de computación y equipamiento tecnológico de última generación, los cuales requieren un mantenimiento adecuado para garantizar su funcionamiento óptimo.",
             "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
-            title:"Reseña Historica",
-            content: [
-            "Universidad Politécnica Territorial de Aragua “Federico Brito Figueroa” — Antes conocida como “Instituto Universitario Experimental De Tecnología De La Victoria” — es una institución académica de grado universitario cuya cede principal está localizada en La Victoria estado Aragua, en la Avenida Universidad junto al comando de la Fuerza Armada Nacional (FAN)"
-            ]
+            
           ],
+          tiltle: "Reseña Historica",
         };
 
       case "mantenimiento":
