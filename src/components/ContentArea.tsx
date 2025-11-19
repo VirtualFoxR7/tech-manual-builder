@@ -54,6 +54,11 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "El mantenimiento general comprende todas las actividades básicas y rutinarias necesarias para mantener los equipos en condiciones operativas estables. Incluye tareas como la limpieza externa, verificación de conexiones, actualización de software y respaldo de información.",
             "Este tipo de mantenimiento debe realizarse de manera regular y puede ser ejecutado por usuarios capacitados o personal técnico, dependiendo de la complejidad de las tareas.",
             "Las principales actividades incluyen: limpieza de superficies, revisión de cables y conexiones, verificación de ventilación adecuada, actualización de sistemas operativos y aplicaciones, y respaldo periódico de datos importantes.",
+            "El mantenimiento consiste en una serie de practicas, acciones, métodos y procedimientos cuya finalidad es restaurar, re-potenciar, reajustar o simplemente cuidar de un objeto mecánico, electrónico, informático, o en lineas generales, de cualquier conjunto formado por mas de una pieza. En este caso concreto hablamos del mantenimiento dirigido a equipos computacionales",
+            "Mantenimiento De Un Sistema Informático",
+            "Es un conjunto de acciones técnicas destinadas a garantizar el correcto funcionamiento, la seguridad y el rendimiento óptimo de los equipos y sistemas informáticos. Este servicio incluye tanto tareas preventivas como correctivas, y puede realizarse de forma presencial o remota para el caso del mantenimiento de software.",
+            "¿Razón Del Porque Hacerle Mantenimiento?",
+            "Un computador debe cuidarse y mantenerse para prevenir problemas. Haciendo mantenimiento regular y arreglos cuando algo falla en la computadora, se logra que las partes físicas duren más tiempo y que los sistemas y programas siempre estén actualizados, para asegurar su correcto funcionamiento y prolongando su vida útil.",
           ],
         };
 
