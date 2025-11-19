@@ -267,7 +267,7 @@ content: [
 
 ‎"¿QUÉ ES?: Módulos de memoria temporal que almacenan datos de trabajo para acceso rápido por la CPU.",
 ‎
-‎"MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los "dientes" del chips con los dedos.",
+‎"MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los 'dientes' del chips con los dedos.",
 
 ‎
 "PROCESADOR (CPU)",
