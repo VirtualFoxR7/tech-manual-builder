@@ -120,7 +120,9 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "Mantenimiento Preventivo Hardware",
             "Comúnmente involucra procedimientos de limpieza, partiendo desde lo mas simple como es la limpieza del case a base de un paño y tal vez una brocha o cepillo, hasta limpiar el polvo del disipador para liberar los canales obstruidos, también puede ser incluido el ajuste de tornillos sueltos, cables mal conectados, la correcta distribución del cableado, e incluso la correcta ubicación del equipo en un lugar adecuadamente ventilado. En esencia, este tipo de mantenimiento consiste en mantener en orden los aspectos menores del equipo con el fin de evitar de que evolucionen en problemas mas graves y notorios",
             "Mantenimiento Preventivo Software",
-            "Corroborar el desempeño del sistema, incluye actualización regular del sistema operativo, aplicaciones y antivirus, etc, además de la integridad de los datos almacenados y/o verificar la velocidad posible del procesamiento de datos dentro de la configuración óptima del sistema.,",
+            "En contraste con el mantenimiento preventivo, el mantenimiento de corrección se fundamenta en el reajuste, reparación o cambio completo de componentes que presenten fallos mayores que pueden o no haber causado el colapso del equipo. Estos fallos pueden ser parte de los siguientes ejemplos:",
+            "Reemplazo de una o mas memorias RAM dañada(s)",
+            "Desmonte y mantenimiento/cambio de la fuente de poder",
           ],
         };
 
