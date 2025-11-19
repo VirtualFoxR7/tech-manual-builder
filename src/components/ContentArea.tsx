@@ -49,7 +49,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
 
       case "institucion":
         return {
-          title: "INSTITUCIÓN (COMUNIDAD)",
+          title: "U.P.T.A. 'Federico Brito Figueroa'",
           content: [
             "La Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' es una institución de educación superior comprometida con la formación integral de profesionales en diversas áreas del conocimiento tecnológico y científico.",
             "Nuestra comunidad universitaria cuenta con modernos laboratorios de computación y equipamiento tecnológico de última generación, los cuales requieren un mantenimiento adecuado para garantizar su funcionamiento óptimo.",
