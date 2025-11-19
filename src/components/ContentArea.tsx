@@ -162,7 +162,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
               "* Set de destornilladores de precisión",
               "* Juego de brochas de tamaños distintos",
               "* Alcohol isopropílico/Limpiador de contactos electrónicos",
-              "* Paño suave“,
+              "* Paño suave",
               "* Mascarilla",
               "* Pulsera anti-estática",
               "* Guantes",
