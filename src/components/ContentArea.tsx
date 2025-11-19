@@ -1,5 +1,6 @@
 import labIntroduccion from "@/assets/lab-introduccion.jpg";
-import universidadEdificio from "@/assets/universidad-edificio.jpg";
+import universidadJardin from "@/assets/universidad-jardin.jpg";
+import universidadEntrada from "@/assets/universidad-entrada.jpg";
 import mantenimientoGeneral from "@/assets/mantenimiento-general.jpg";
 import mantenimientoPreventivo from "@/assets/mantenimiento-preventivo.jpg";
 import mantenimientoCorrectivo from "@/assets/mantenimiento-correctivo.jpg";
@@ -17,7 +18,7 @@ interface ContentAreaProps {
 // Mapping of sections to their corresponding images
 const sectionImages: Record<string, string> = {
   introduccion: labIntroduccion,
-  institucion: universidadEdificio,
+  institucion: universidadJardin,
   mantenimiento: mantenimientoGeneral,
   "mantenimiento-general": mantenimientoGeneral,
   "mantenimiento-preventivo": mantenimientoPreventivo,
@@ -29,6 +30,9 @@ const sectionImages: Record<string, string> = {
   "equipos-institucion": equiposInstitucion,
   "equipo-desarrollo": equipoDesarrollo,
 };
+
+// Special sections with multiple images
+const institutionImages = [universidadJardin, universidadEntrada];
 
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const getContent = () => {
@@ -217,21 +221,42 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
 
         {/* Content Area */}
         <div className="space-y-6">
-          {/* Image - Left side */}
-          <div className="flex items-start gap-6 mb-6">
-            <img 
-              src={sectionImages[activeSection]} 
-              alt={content.title}
-              className="flex-shrink-0 w-48 h-48 object-cover rounded-lg border border-border shadow-sm"
-            />
-            
-            {/* First paragraph alongside image */}
-            <div className="flex-1">
-              <p className="text-foreground leading-relaxed text-justify">
+          {/* Image(s) - Special handling for institution section */}
+          {activeSection === "institucion" ? (
+            <>
+              {/* Two images grid for institution */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {institutionImages.map((img, idx) => (
+                  <img 
+                    key={idx}
+                    src={img} 
+                    alt={`${content.title} - Imagen ${idx + 1}`}
+                    className="w-full h-64 object-cover rounded-lg border border-border shadow-sm"
+                  />
+                ))}
+              </div>
+              {/* First paragraph below images */}
+              <p className="text-foreground leading-relaxed text-justify mb-6">
                 {content.content[0]}
               </p>
+            </>
+          ) : (
+            /* Single image - Left side */
+            <div className="flex items-start gap-6 mb-6">
+              <img 
+                src={sectionImages[activeSection]} 
+                alt={content.title}
+                className="flex-shrink-0 w-48 h-48 object-cover rounded-lg border border-border shadow-sm"
+              />
+              
+              {/* First paragraph alongside image */}
+              <div className="flex-1">
+                <p className="text-foreground leading-relaxed text-justify">
+                  {content.content[0]}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Remaining paragraphs */}
           {content.content.slice(1).map((paragraph, index) => (
