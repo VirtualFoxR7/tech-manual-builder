@@ -183,7 +183,26 @@ case "pasos":
      return{ title: "PASOS PARA EL MANTENIMIENTO",
 content: [
 
-"Test",
+"Realizar pruebas pertinentes para ubicar los fallos a tratar: Se debe encender y probar el equipo, con la finalidad de encontrar fallos de arranque, fallas de software, fallas en los dispositivos de entrada, y/o fallos en puertos de entrada como los puertos USB.",
+
+"Apagar y desconectar el equipo: Con la finalidad de prevenir cualquier posible incidente eléctrico, se debe estar seguro de que el equipo fue desconectado y que sus capacitores se han descargado.",
+
+"Desarmar con cuidado la tapa/cubierta del case: El procedimiento varía según la marca y el modelo del case, sin embargo, el primer paso siempre es ubicar y extraer los tornillos de la tapa/cubierta antes de retirarla.",
+
+
+"Inspeccionar el estado de los componentes a simple vista: Antes de empezar a desmontar cualquier cosa, se debe realizar una inspección visual preliminar en búsqueda de daño visible a simple vista, como recomendación, tomar notas y fotos será útil.",
+
+"Proceder con la limpieza de los componentes: Con ayuda de un set de brochas, paños, aire comprimido, y alcohol isopropílico, o en su defecto limpiador de contactos electrónicos, se debe realizar una limpieza a los componentes del equipo, manipulando el hardware con cautela para evitar daños, asimismo, aunque el limpiador de contactos suele ser dieléctrico, se deben tener en consideración los componentes que no deben ser sometidos a líquidos, como la lectora DVD.",
+
+"Verificar las conexiones de los cables y componentes: Antes de proceder a desarmar, y con una visión mas clara sin todo el polvo, el siguiente paso es realizar una inspección de las conexiones de los cables y los componentes para determinar sí esa era o no la fuente del fallo en cuestión.",
+
+"Extraer los componentes según sea necesario: Ya con una limpieza superficial hecha y las conexiones revisadas, el siguiente paso es extraer los componentes según lo requiera el mantenimiento, siempre teniendo cuidado de posibles tornillos que aun sigan en la pieza.",
+
+"Realizar los cambios de hardware según sea necesario: Si algún componente se encuentra irremediablemente dañado, no queda más que reemplazarlo, teniendo en cuenta las especificaciones de la motherboard, el consumo del componente y la capacidad de la fuente de poder, la compatibilidad con los puertos y los conectores, e incluso el tamaño en caso de la tarjeta gráfica.",
+
+"Reensamblar el equipo: Tras haber completado la anterior lista de tareas, es hora de reensamblar el equipo, siempre teniendo cuidado y atención a la hora de conectar los componentes y los cables, como recomendación, lo mejor es realizar todos los cambios y mantenimientos del equipo en solo un desarmado.",
+
+"Realizar nuevas pruebas de funcionamiento: Con el equipo nuevamente armado, es hora de probar el funcionamiento, desde el arranque correcto, hasta la correcta funcionalidad de la imagen en pantalla y los dispositivos de entrada.",
 
    ],
 
