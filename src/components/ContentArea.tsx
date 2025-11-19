@@ -1,3 +1,4 @@
+import { useState } from "react";
 import labIntroduccion from "@/assets/lab-introduccion.jpg";
 import universidadJardin from "@/assets/universidad-jardin.jpg";
 import universidadEntrada from "@/assets/universidad-entrada.jpg";
@@ -11,6 +12,8 @@ import componentes from "@/assets/componentes.jpg";
 import equipoInstitucion1 from "@/assets/equipo-institucion-1.jpg";
 import equipoInstitucion2 from "@/assets/equipo-institucion-2.jpg";
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
+import { ImageModal } from "./ImageModal";
+import { ZoomIn } from "lucide-react";
 
 interface ContentAreaProps {
   activeSection: string;
@@ -37,6 +40,16 @@ const institutionImages = [universidadJardin, universidadEntrada];
 const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion2];
 
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImageAlt, setSelectedImageAlt] = useState("");
+
+  const handleImageClick = (src: string, alt: string) => {
+    setSelectedImage(src);
+    setSelectedImageAlt(alt);
+    setIsModalOpen(true);
+  };
+
   const getContent = () => {
     switch (activeSection) {
       case "introduccion":
@@ -229,12 +242,22 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
               {/* Two images grid for institution */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {institutionImages.map((img, idx) => (
-                  <img 
+                  <div 
                     key={idx}
-                    src={img} 
-                    alt={`${content.title} - Imagen ${idx + 1}`}
-                    className="w-full h-64 object-cover rounded-lg border border-border shadow-sm"
-                  />
+                    className="relative group cursor-pointer"
+                    onClick={() => handleImageClick(img, `${content.title} - Imagen ${idx + 1}`)}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`${content.title} - Imagen ${idx + 1}`}
+                      className="w-full h-64 object-cover rounded-lg border border-border shadow-sm transition-all group-hover:brightness-75"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-background/90 rounded-full p-3 shadow-lg">
+                        <ZoomIn className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
               {/* First paragraph below images */}
@@ -247,12 +270,22 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
               {/* Two images grid for equipos institucion */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {equiposInstitucionImages.map((img, idx) => (
-                  <img 
+                  <div 
                     key={idx}
-                    src={img} 
-                    alt={`${content.title} - Imagen ${idx + 1}`}
-                    className="w-full h-64 object-cover rounded-lg border border-border shadow-sm"
-                  />
+                    className="relative group cursor-pointer"
+                    onClick={() => handleImageClick(img, `${content.title} - Imagen ${idx + 1}`)}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`${content.title} - Imagen ${idx + 1}`}
+                      className="w-full h-64 object-cover rounded-lg border border-border shadow-sm transition-all group-hover:brightness-75"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="bg-background/90 rounded-full p-3 shadow-lg">
+                        <ZoomIn className="w-6 h-6" />
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
               {/* First paragraph below images */}
@@ -263,11 +296,21 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           ) : (
             /* Single image - Left side */
             <div className="flex items-start gap-6 mb-6">
-              <img 
-                src={sectionImages[activeSection]} 
-                alt={content.title}
-                className="flex-shrink-0 w-48 h-48 object-cover rounded-lg border border-border shadow-sm"
-              />
+              <div 
+                className="relative group cursor-pointer flex-shrink-0"
+                onClick={() => handleImageClick(sectionImages[activeSection], content.title)}
+              >
+                <img 
+                  src={sectionImages[activeSection]} 
+                  alt={content.title}
+                  className="w-48 h-48 object-cover rounded-lg border border-border shadow-sm transition-all group-hover:brightness-75"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-background/90 rounded-full p-2 shadow-lg">
+                    <ZoomIn className="w-5 h-5" />
+                  </div>
+                </div>
+              </div>
               
               {/* First paragraph alongside image */}
               <div className="flex-1">
@@ -293,6 +336,14 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           </p>
         </div>
       </article>
+
+      {/* Image Modal */}
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        imageSrc={selectedImage}
+        imageAlt={selectedImageAlt}
+      />
     </main>
   );
 };
