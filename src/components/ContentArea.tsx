@@ -177,7 +177,15 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "Medidas básicas de seguridad: Siempre desconectar los equipos de la corriente eléctrica antes de iniciar cualquier intervención. Usar pulsera antiestática para prevenir descargas electrostáticas. Trabajar en un área bien ventilada e iluminada. No usar imanes cerca de discos duros o medios de almacenamiento. Evitar consumir alimentos o bebidas cerca de los equipos.",
             "Protección de datos: Realizar respaldos completos antes de cualquier mantenimiento mayor. Etiquetar cables y componentes antes de desconectarlos. Documentar todas las configuraciones importantes. Usar herramientas adecuadas para evitar daños físicos. Mantener un área de trabajo ordenada y libre de estática.",
           ],
-        };
+       };
+
+case "pasos":
+     return{ title: "PASOS PARA EL MANTENIMIENTO",
+content ["Test"],
+
+};
+
+        
 
       case "equipos":
         return {
