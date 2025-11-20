@@ -20,6 +20,22 @@ import equipoInstitucion6 from "@/assets/equipo-institucion-6.jpg";
 import equipoInstitucion7 from "@/assets/equipo-institucion-7.jpg";
 
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
+
+// Componentes individuales
+import gabinete from "@/assets/componentes/gabinete.jpg";
+import placaMadre from "@/assets/componentes/placa-madre.jpg";
+import fuentePoder from "@/assets/componentes/fuente-poder.jpg";
+import tarjetaExpansion from "@/assets/componentes/tarjeta-expansion.jpg";
+import memoriaRam from "@/assets/componentes/memoria-ram.jpg";
+import procesador from "@/assets/componentes/procesador.jpg";
+import discoDuro from "@/assets/componentes/disco-duro.jpg";
+import puertosRanuras from "@/assets/componentes/puertos-ranuras.jpg";
+import componentesElectricos from "@/assets/componentes/componentes-electricos.jpg";
+import unidadCdDvd from "@/assets/componentes/unidad-cd-dvd.jpg";
+import cablesBuses from "@/assets/componentes/cables-buses.jpg";
+import carcasaGabinete from "@/assets/componentes/carcasa-gabinete.jpg";
+import ensambleCase from "@/assets/componentes/ensamble-case.jpg";
+
 import { ImageModal } from "./ImageModal";
 import { ZoomIn } from "lucide-react";
 
@@ -46,7 +62,24 @@ const sectionImages: Record<string, string> = {
 // Special sections with multiple images
 const institutionImages = [universidadJardin, universidadEntrada];
 const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion4, equipoInstitucion3, equipoInstitucion7];
-  const componentesImages = [componentes,componentes1];
+const componentesImages = [componentes, componentes1];
+
+// Mapping de componentes a sus imágenes
+const componenteImageMap: Record<string, string> = {
+  "gabinete": gabinete,
+  "placa-madre": placaMadre,
+  "fuente-poder": fuentePoder,
+  "tarjeta-expansion": tarjetaExpansion,
+  "memoria-ram": memoriaRam,
+  "procesador": procesador,
+  "disco-duro": discoDuro,
+  "puertos-ranuras": puertosRanuras,
+  "componentes-electricos": componentesElectricos,
+  "unidad-cd-dvd": unidadCdDvd,
+  "cables-buses": cablesBuses,
+  "carcasa-gabinete": carcasaGabinete,
+  "ensamble-case": ensambleCase,
+};
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -235,58 +268,86 @@ content: [
       case "componentes":
   return {
     title: "COMPONENTES",
-    content: [
-      "GABINETE (CASE)",
-      "¿QUÉ ES?: Es una carcasa que contiene y protege físicamente los componentes internos de una computadora. Proporciona estructura y soporte, además de permitir la ventilación adecuada para el equipo.",
-      "MODO DE LIMPIEZA: Apagar y desconectar el equipo. Abrir la carcasa con cuidado. Usar aire comprimido para eliminar polvo en zonas internas, ventiladores y componentes. Limpieza con paño de micro-fibra para superficies sin contacto eléctrico. Evitar tocar circuitos directamente.",
-
-      "PLACA MADRE",
-      "¿QUÉ ES?: Tarjeta principal que conecta y permite la comunicación entre todos los componentes internos del computador, incluyendo CPU, memoria, tarjetas de expansión y dispositivos de almacenamiento. Contiene circuitos, chips y conectores esenciales para el funcionamiento del equipo.",
-      "MODO DE LIMPIEZA: Retirar cuidadosamente la placa madre del case. Usar aire comprimido para remover polvo de circuitos y ranuras. Limpieza con cepillo suave para áreas difíciles. Limpiar contactos con goma de borrar blanca. Evitar humedad y golpes.",
-
-      "FUENTE DE PODER",
-      "¿QUÉ ES?: Componente que suministra energía eléctrica a todos los demás componentes del computador, transformando la electricidad de la red en voltajes adecuados y estables para cada parte. Suele incluir ventilador y rejillas por donde puede acumularse polvo.",
-      "MODO DE LIMPIEZA: Apagar, desconectar y no abrir la fuente. Usar aire comprimido para eliminar polvo de ventilador y rejillas. Limpiar exterior con paño seco o ligeramente humedecido.",
-
-      "TARJETA DE EXPANSIÓN",
-      "¿QUÉ ES?: Placas adicionales que se instalan en la placa madre para agregar funcionalidades como audio, video, o redes, usando ranuras especiales.",
-      "MODO DE LIMPIEZA: Retirar la tarjeta con cuidado. Usar aire comprimido para polvo. Limpiar contactos con goma de borrar. Cepillar suavemente zonas con suciedad. Volver a instalar con firmeza.",
-
-      "MEMORIA RAM",
-      "¿QUÉ ES?: Módulos de memoria temporal que almacenan datos de trabajo para acceso rápido por la CPU.",
-      "MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los 'dientes' del chips con los dedos.",
-
-      "PROCESADOR (CPU)",
-      "¿QUÉ ES?: Unidad central de procesamiento que ejecuta las instrucciones y procesos del sistema operativo y programas.",
-      "MODO DE LIMPIEZA: Retirar disipador y ventilador con cuidado. Limpiar con aire comprimido. Cambiar pasta térmica para mejorar disipación. Evitar tocar la superficie del chip.",
-
-      "DISCO DURO",
-      "¿QUÉ ES?: Dispositivo de almacenamiento permanente donde se guardan datos, programas y el sistema operativo. Existen varios tipos, el HDD (Hard Disk Drive) SSD (Solid State Drive) y M.2 o NGFF (Next Generation Form Factor)",
-      "MODO DE LIMPIEZA: Limpiar solo el exterior con paño suavemente humedecido. Usar aire comprimido en conectores externos. (No abrir el disco duro).",
-
-      "PUERTOS Y RANURAS",
-      "¿QUÉ SON?: Conectores externos (puertos) y slots internos (ranuras) que permiten la conexión de dispositivos periféricos y tarjetas de expansión a la computadora.",
-      "MODO DE LIMPIEZA: Usar aire comprimido y cepillo fino para polvo incrustado. Evitar humedad directa.",
-
-      "COMPONENTES ELÉCTRICOS",
-      "¿QUÉ SON?: Elementos físicos dentro del computador, como resistencias, transistores y circuitos integrados, que controlan y procesan señales eléctricas para el funcionamiento del equipo.",
-      "MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos).",
-
-      "UNIDAD CD Y DVD",
-      "¿QUÉ ES?: Dispositivos ópticos que leen y/o graban datos en discos compactos (CD) y discos digitales versátiles (DVD), usados para almacenar y acceder a información.",
-      "MODO DE LIMPIEZA: Limpiar exterior con paño humedecido. Aire comprimido en el interior si se abre. Evitar líquidos dentro.",
-
-      "CABLES Y BUSES",
-      "¿QUÉ SON?: Medios físicos (cables) y vías de comunicación internas (buses) que transmiten datos y energía entre los componentes del ordenador.",
-      "MODO DE LIMPIEZA: Paño seco o ligeramente humedecido. Verificar conexiones sin polvo.",
-
-      "CARCASA DEL GABINETE (CASE)",
-      "¿QUÉ ES?: Estructura externa que protege y da forma al equipo. Puede ser de metal o plástico.",
-      "MODO DE LIMPIEZA: Paño humedecido para exterior. Aire comprimido en rejillas y ventiladores.",
-
-      "ENSAMBLE INTERNO Y EXTERNO DEL CASE",
-      "¿QUÉ ES?: Conjunto físico de piezas internas y externas del gabinete.",
-      "MODO DE LIMPIEZA: Aire comprimido interno y paño húmedo externo. Revisión y ajuste de tornillos."
+    content: [],
+    componentes: [
+      {
+        nombre: "GABINETE (CASE)",
+        imagen: "gabinete",
+        definicion: "¿QUÉ ES?: Es una carcasa que contiene y protege físicamente los componentes internos de una computadora. Proporciona estructura y soporte, además de permitir la ventilación adecuada para el equipo.",
+        limpieza: "MODO DE LIMPIEZA: Apagar y desconectar el equipo. Abrir la carcasa con cuidado. Usar aire comprimido para eliminar polvo en zonas internas, ventiladores y componentes. Limpieza con paño de micro-fibra para superficies sin contacto eléctrico. Evitar tocar circuitos directamente."
+      },
+      {
+        nombre: "PLACA MADRE",
+        imagen: "placa-madre",
+        definicion: "¿QUÉ ES?: Tarjeta principal que conecta y permite la comunicación entre todos los componentes internos del computador, incluyendo CPU, memoria, tarjetas de expansión y dispositivos de almacenamiento. Contiene circuitos, chips y conectores esenciales para el funcionamiento del equipo.",
+        limpieza: "MODO DE LIMPIEZA: Retirar cuidadosamente la placa madre del case. Usar aire comprimido para remover polvo de circuitos y ranuras. Limpieza con cepillo suave para áreas difíciles. Limpiar contactos con goma de borrar blanca. Evitar humedad y golpes."
+      },
+      {
+        nombre: "FUENTE DE PODER",
+        imagen: "fuente-poder",
+        definicion: "¿QUÉ ES?: Componente que suministra energía eléctrica a todos los demás componentes del computador, transformando la electricidad de la red en voltajes adecuados y estables para cada parte. Suele incluir ventilador y rejillas por donde puede acumularse polvo.",
+        limpieza: "MODO DE LIMPIEZA: Apagar, desconectar y no abrir la fuente. Usar aire comprimido para eliminar polvo de ventilador y rejillas. Limpiar exterior con paño seco o ligeramente humedecido."
+      },
+      {
+        nombre: "TARJETA DE EXPANSIÓN",
+        imagen: "tarjeta-expansion",
+        definicion: "¿QUÉ ES?: Placas adicionales que se instalan en la placa madre para agregar funcionalidades como audio, video, o redes, usando ranuras especiales.",
+        limpieza: "MODO DE LIMPIEZA: Retirar la tarjeta con cuidado. Usar aire comprimido para polvo. Limpiar contactos con goma de borrar. Cepillar suavemente zonas con suciedad. Volver a instalar con firmeza."
+      },
+      {
+        nombre: "MEMORIA RAM",
+        imagen: "memoria-ram",
+        definicion: "¿QUÉ ES?: Módulos de memoria temporal que almacenan datos de trabajo para acceso rápido por la CPU.",
+        limpieza: "MODO DE LIMPIEZA: Extraer los módulos. Limpiar contactos con goma de borrar blanca. Soplar el polvo con aire comprimido. Evitar tocar los 'dientes' del chips con los dedos."
+      },
+      {
+        nombre: "PROCESADOR (CPU)",
+        imagen: "procesador",
+        definicion: "¿QUÉ ES?: Unidad central de procesamiento que ejecuta las instrucciones y procesos del sistema operativo y programas.",
+        limpieza: "MODO DE LIMPIEZA: Retirar disipador y ventilador con cuidado. Limpiar con aire comprimido. Cambiar pasta térmica para mejorar disipación. Evitar tocar la superficie del chip."
+      },
+      {
+        nombre: "DISCO DURO",
+        imagen: "disco-duro",
+        definicion: "¿QUÉ ES?: Dispositivo de almacenamiento permanente donde se guardan datos, programas y el sistema operativo. Existen varios tipos, el HDD (Hard Disk Drive) SSD (Solid State Drive) y M.2 o NGFF (Next Generation Form Factor)",
+        limpieza: "MODO DE LIMPIEZA: Limpiar solo el exterior con paño suavemente humedecido. Usar aire comprimido en conectores externos. (No abrir el disco duro)."
+      },
+      {
+        nombre: "PUERTOS Y RANURAS",
+        imagen: "puertos-ranuras",
+        definicion: "¿QUÉ SON?: Conectores externos (puertos) y slots internos (ranuras) que permiten la conexión de dispositivos periféricos y tarjetas de expansión a la computadora.",
+        limpieza: "MODO DE LIMPIEZA: Usar aire comprimido y cepillo fino para polvo incrustado. Evitar humedad directa."
+      },
+      {
+        nombre: "COMPONENTES ELÉCTRICOS",
+        imagen: "componentes-electricos",
+        definicion: "¿QUÉ SON?: Elementos físicos dentro del computador, como resistencias, transistores y circuitos integrados, que controlan y procesan señales eléctricas para el funcionamiento del equipo.",
+        limpieza: "MODO DE LIMPIEZA: Soplar con aire comprimido a distancia segura. (No usar líquidos)."
+      },
+      {
+        nombre: "UNIDAD CD Y DVD",
+        imagen: "unidad-cd-dvd",
+        definicion: "¿QUÉ ES?: Dispositivos ópticos que leen y/o graban datos en discos compactos (CD) y discos digitales versátiles (DVD), usados para almacenar y acceder a información.",
+        limpieza: "MODO DE LIMPIEZA: Limpiar exterior con paño humedecido. Aire comprimido en el interior si se abre. Evitar líquidos dentro."
+      },
+      {
+        nombre: "CABLES Y BUSES",
+        imagen: "cables-buses",
+        definicion: "¿QUÉ SON?: Medios físicos (cables) y vías de comunicación internas (buses) que transmiten datos y energía entre los componentes del ordenador.",
+        limpieza: "MODO DE LIMPIEZA: Paño seco o ligeramente humedecido. Verificar conexiones sin polvo."
+      },
+      {
+        nombre: "CARCASA DEL GABINETE (CASE)",
+        imagen: "carcasa-gabinete",
+        definicion: "¿QUÉ ES?: Estructura externa que protege y da forma al equipo. Puede ser de metal o plástico.",
+        limpieza: "MODO DE LIMPIEZA: Paño humedecido para exterior. Aire comprimido en rejillas y ventiladores."
+      },
+      {
+        nombre: "ENSAMBLE INTERNO Y EXTERNO DEL CASE",
+        imagen: "ensamble-case",
+        definicion: "¿QUÉ ES?: Conjunto físico de piezas internas y externas del gabinete.",
+        limpieza: "MODO DE LIMPIEZA: Aire comprimido interno y paño húmedo externo. Revisión y ajuste de tornillos."
+      }
     ],
   };
 
@@ -388,6 +449,68 @@ content: [
             </p>
           </div>
         </article>
+      </main>
+    );
+  }
+
+  // Special render for Componentes
+  if (activeSection === "componentes" && 'componentes' in content) {
+    return (
+      <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+        <article className="max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            {content.title}
+          </h2>
+          
+          <div className="space-y-8">
+            {content.componentes.map((componente: any, idx: number) => (
+              <div key={idx} className="border-b border-border pb-8 last:border-b-0">
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  {componente.nombre}
+                </h3>
+                
+                <div 
+                  className="relative group cursor-pointer mb-4 inline-block"
+                  onClick={() => handleImageClick(componenteImageMap[componente.imagen], componente.nombre)}
+                >
+                  <img 
+                    src={componenteImageMap[componente.imagen]}
+                    alt={componente.nombre}
+                    className="w-full max-w-md h-64 object-cover rounded-lg border border-border shadow-sm transition-all group-hover:brightness-75"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-background/90 rounded-full p-3 shadow-lg">
+                      <ZoomIn className="w-6 h-6" />
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-foreground leading-relaxed text-justify mb-3">
+                  {componente.definicion}
+                </p>
+                
+                <p className="text-foreground leading-relaxed text-justify">
+                  {componente.limpieza}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Footer note */}
+          <div className="mt-12 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
+              Manual Técnico para Mantenimiento de Equipos Computacionales - Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa"
+            </p>
+          </div>
+        </article>
+
+        {/* Image Modal */}
+        <ImageModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          imageSrc={selectedImage}
+          imageAlt={selectedImageAlt}
+        />
       </main>
     );
   }
