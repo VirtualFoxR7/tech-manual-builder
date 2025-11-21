@@ -1,4 +1,4 @@
-import { Building2 } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   return (
@@ -13,9 +13,8 @@ const Header = () => {
         </div>
 
         {/* Institution Logo - Right Side */}
-        <div className="flex items-center justify-center w-16 h-16 bg-background rounded-lg ml-4 flex-shrink-0">
-          <Building2 className="w-10 h-10 text-primary" />
-          <img src="logo.jpg" alt="logo" className="logo-header" />
+        <div className="flex items-center justify-center w-20 h-20 ml-4 flex-shrink-0">
+          <img src={logo} alt="UPTAEB Logo" className="w-full h-full object-contain" />
         </div>
       </div>
     </header>
