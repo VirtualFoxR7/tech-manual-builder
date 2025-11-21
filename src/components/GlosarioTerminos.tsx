@@ -14,23 +14,23 @@ const alphabet = [
 const glossaryTerms: Record<string, Array<{ term: string; definition: string }>> = {
   'A': [
     {
-      term: "Antivirus",
+      term: "ANTIVIRUS",
       definition: "Software diseñado para detectar, prevenir y eliminar virus y otros tipos de malware de los sistemas informáticos."
     },
     {
-      term: "Actualización",
+      term: "ACTUALIZACION",
       definition: "Proceso de instalar versiones más recientes de software, firmware o sistemas operativos para mejorar funcionalidad, seguridad o rendimiento."
     },
     {
-      term: "Actualizaciones",
+      term: "ACTUALIZACIONES ",
       definition: "Mejoras o correcciones instaladas en un sistema operativo o programa para mejorar su rendimiento o seguridad."
     },
     {
-      term: "Adaptador",
+      term: "ADAPTADOR",
       definition: "Dispositivo que permite la conexión entre componentes con interfaces diferentes o incompatibles."
     },
     {
-      term: "Apagar",
+      term: "APAGAR",
       definition: "Proceso de cerrar todos los programas y cortar el suministro eléctrico del equipo de forma segura."
     },
     {
