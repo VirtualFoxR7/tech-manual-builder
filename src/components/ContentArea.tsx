@@ -46,7 +46,7 @@ interface ContentAreaProps {
 
 // Mapping of sections to their corresponding images
 const sectionImages: Record<string, string> = {
-  introduccion: labIntroduccion,
+ // introduccion: labIntroduccion,
   institucion: universidadJardin,
   mantenimiento: mantenimientoGeneral,
   "mantenimiento-general": mantenimientoGeneral,
