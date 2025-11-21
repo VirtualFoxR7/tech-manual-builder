@@ -37,6 +37,7 @@ import unidadCdDvd from "@/assets/componentes/unidad-cd-dvd.jpg";
 import cablesBuses from "@/assets/componentes/cables-buses.jpg";
 import carcasaGabinete from "@/assets/componentes/carcasa-gabinete.jpg";
 import ensambleCase from "@/assets/componentes/ensamble-case.jpg";
+import monitoe from "@/assets/componentes/monitor.jpg";
 
 import { ImageModal } from "./ImageModal";
 import { ZoomIn } from "lucide-react";
