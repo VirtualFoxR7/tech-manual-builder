@@ -37,7 +37,7 @@ import unidadCdDvd from "@/assets/componentes/unidad-cd-dvd.jpg";
 import cablesBuses from "@/assets/componentes/cables-buses.jpg";
 import carcasaGabinete from "@/assets/componentes/carcasa-gabinete.jpg";
 import ensambleCase from "@/assets/componentes/ensamble-case.jpg";
-import monitoe from "@/assets/componentes/monitor.jpg";
+import monitor from "@/assets/componentes/monitor.jpg";
 
 import { ImageModal } from "./ImageModal";
 import { ZoomIn } from "lucide-react";
@@ -83,6 +83,7 @@ const componenteImageMap: Record<string, string> = {
   "cables-buses": cablesBuses,
   "carcasa-gabinete": carcasaGabinete,
   "ensamble-case": ensambleCase,
+  "monitor": monitor
 };
 const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
