@@ -18,6 +18,7 @@ import equipoInstitucion4 from "@/assets/equipo-institucion-4.jpg";
 import equipoInstitucion5 from "@/assets/equipo-institucion-5.jpg";
 import equipoInstitucion6 from "@/assets/equipo-institucion-6.jpg";
 import equipoInstitucion7 from "@/assets/equipo-institucion-7.jpg";
+import header from "@/assets/logo.jpg";
 
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
 
