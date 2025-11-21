@@ -309,7 +309,7 @@ content: [
       },
       {
         nombre: "DISCO DURO",
-        imagen: "disco-duro",
+       // imagen: "disco-duro",
         definicion: "¿QUÉ ES?: Dispositivo de almacenamiento permanente donde se guardan datos, programas y el sistema operativo. Existen varios tipos, el HDD (Hard Disk Drive) SSD (Solid State Drive) y M.2 o NGFF (Next Generation Form Factor)",
         limpieza: "MODO DE LIMPIEZA: Limpiar solo el exterior con paño suavemente humedecido. Usar aire comprimido en conectores externos. (No abrir el disco duro)."
       },
