@@ -15,7 +15,7 @@ const Header = () => {
         {/* Institution Logo - Right Side */}
         <div className="flex items-center justify-center w-16 h-16 bg-background rounded-lg ml-4 flex-shrink-0">
           <Building2 className="w-10 h-10 text-primary" />
-          <img src = "logo.jpg" alt = "logo" className="logo-header"> </img>
+          <img src="logo.jpg" alt="logo" className="logo-header" />
         </div>
       </div>
     </header>
