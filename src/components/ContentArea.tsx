@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GlosarioTerminos from "./GlosarioTerminos";
-import labIntroduccion from "@/assets/lab-introduccion.jpg";
+//import labIntroduccion from "@/assets/lab-introduccion.jpg";
 import universidadJardin from "@/assets/universidad-jardin.jpg";
 import universidadEntrada from "@/assets/universidad-entrada.jpg";
 import mantenimientoGeneral from "@/assets/mantenimiento-general.jpg";
