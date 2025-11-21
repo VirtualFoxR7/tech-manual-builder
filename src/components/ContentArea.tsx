@@ -87,6 +87,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedImageAlt, setSelectedImageAlt] = useState("");
+  const [selectedInvolucrado, setSelectedInvolucrado] = useState(0);
 
   const handleImageClick = (src: string, alt: string) => {
     setSelectedImage(src);
@@ -385,6 +386,13 @@ content: [
           ],
         };
 
+      case "involucrados":
+        return {
+          title: "INVOLUCRADOS",
+          content: [],
+          isInvolucrados: true,
+        };
+
       case "extras":
         return {
           title: "EXTRAS",
@@ -445,6 +453,82 @@ content: [
           </h2>
           <GlosarioTerminos />
           
+          {/* Footer note */}
+          <div className="mt-12 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
+              Manual Técnico para Mantenimiento de Equipos Computacionales - Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa"
+            </p>
+          </div>
+        </article>
+      </main>
+    );
+  }
+
+  // Special render for Involucrados
+  if (activeSection === "involucrados") {
+    const involucrados = [
+      {
+        nombre: "Estudiante 1",
+        foto: equipoDesarrollo,
+        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', participando activamente en el desarrollo de este manual técnico como parte de su formación académica en el área de tecnología."
+      },
+      {
+        nombre: "Estudiante 2",
+        foto: equipoDesarrollo,
+        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', contribuyendo con sus conocimientos en el área de informática para la elaboración de este proyecto comunitario."
+      },
+      {
+        nombre: "Estudiante 3",
+        foto: equipoDesarrollo,
+        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', comprometido con la excelencia técnica y el servicio a la comunidad a través de este manual de mantenimiento."
+      }
+    ];
+
+    return (
+      <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+        <article className="max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            INVOLUCRADOS
+          </h2>
+          
+          {/* Grid de involucrados */}
+          <div className="grid grid-cols-3 gap-6 mb-8">
+            {involucrados.map((persona, idx) => (
+              <div 
+                key={idx}
+                onClick={() => setSelectedInvolucrado(idx)}
+                className={`cursor-pointer transition-all duration-300 p-6 rounded-lg border ${
+                  selectedInvolucrado === idx 
+                    ? 'bg-[hsl(210,100%,25%)] border-[hsl(210,100%,25%)]' 
+                    : 'bg-background border-border hover:border-primary'
+                }`}
+              >
+                <div className="aspect-square mb-4 overflow-hidden rounded-lg">
+                  <img 
+                    src={persona.foto}
+                    alt={persona.nombre}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className={`text-center text-lg font-bold ${
+                  selectedInvolucrado === idx ? 'text-white' : 'text-foreground'
+                }`}>
+                  {persona.nombre}
+                </h3>
+              </div>
+            ))}
+          </div>
+
+          {/* Cuadro de texto con información del seleccionado */}
+          <div className="bg-muted/50 border border-border rounded-lg p-6">
+            <h3 className="text-xl font-bold text-foreground mb-4">
+              Reseña Académica
+            </h3>
+            <p className="text-foreground leading-relaxed text-justify">
+              {involucrados[selectedInvolucrado].resena}
+            </p>
+          </div>
+
           {/* Footer note */}
           <div className="mt-12 pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground italic">

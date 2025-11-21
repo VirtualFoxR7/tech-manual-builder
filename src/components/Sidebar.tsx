@@ -42,6 +42,9 @@ children: [
   {
     id: "equipo-desarrollo",
     title: "Equipo de desarrollo del proyecto",
+    children: [
+      { id: "involucrados", title: "Involucrados" },
+    ],
   },
   {
     id: "extras",
@@ -59,7 +62,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
-  const [expandedItems, setExpandedItems] = useState<string[]>(["mantenimiento", "equipos", "extras"]);
+  const [expandedItems, setExpandedItems] = useState<string[]>(["mantenimiento", "equipos", "extras", "equipo-desarrollo"]);
 
   const toggleExpand = (itemId: string) => {
     setExpandedItems((prev) =>
