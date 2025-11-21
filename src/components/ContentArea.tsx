@@ -9,8 +9,8 @@ import mantenimientoCorrectivo from "@/assets/mantenimiento-correctivo.jpg";
 import herramientas from "@/assets/herramientas.jpg";
 import seguridad from "@/assets/seguridad.jpg";
 import equipos from "@/assets/equipos.jpg";
-import componentes from "@/assets/componentes-1.jpg";
-import componentes1 from "@/assets/componentes-2.jpg";
+//import componentes from "@/assets/componentes-1.jpg";
+import componentes1 from "@/assets/componentes-1.jpg";
 import equipoInstitucion1 from "@/assets/equipo-institucion-1.jpg";
 import equipoInstitucion2 from "@/assets/equipo-institucion-2.jpg";
 import equipoInstitucion3 from "@/assets/equipo-institucion-3.jpg";
@@ -56,7 +56,7 @@ const sectionImages: Record<string, string> = {
   herramientas: herramientas,
   seguridad: seguridad,
   equipos: equipos,
-  componentes: componentes,
+  componentes: componentes1,
   "equipos-institucion": equipoInstitucion1,
   "equipo-desarrollo": equipoDesarrollo,
   agradecimiento: agradecimiento,
@@ -65,7 +65,7 @@ const sectionImages: Record<string, string> = {
 // Special sections with multiple images
 const institutionImages = [universidadJardin, universidadEntrada];
 const equiposInstitucionImages = [equipoInstitucion1, equipoInstitucion4, equipoInstitucion3, equipoInstitucion7];
-const componentesImages = [componentes, componentes1];
+const componentesImages = [componentes1, componentes1];
 
 // Mapping de componentes a sus imágenes
 const componenteImageMap: Record<string, string> = {
