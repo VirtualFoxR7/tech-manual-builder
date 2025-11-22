@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GlosarioTerminos from "./GlosarioTerminos";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 //import labIntroduccion from "@/assets/lab-introduccion.jpg";
 import universidadJardin from "@/assets/universidad-jardin.jpg";
 import universidadEntrada from "@/assets/universidad-entrada.jpg";
@@ -369,10 +370,23 @@ content: [
           title: "EQUIPOS DE LA INSTITUCIÓN (COMUNIDAD)",
           content: [
             "La institución cuenta con un inventario diverso de equipos computacionales distribuidos en diferentes áreas: laboratorios, aulas, oficinas administrativas y biblioteca.",
-            "LABORATORIOS DE COMPUTACIÓN: Equipados con estaciones de trabajo de última generación, con procesadores Intel Core i5/i7 o AMD Ryzen equivalentes, 16GB de RAM, discos SSD de 256GB o superior, y monitores LED de 24 pulgadas.",
-            "EQUIPOS ADMINISTRATIVOS: Computadores de escritorio y portátiles para gestión administrativa, con especificaciones medias adecuadas para tareas ofimáticas y sistemas de gestión institucional.",
-            "SERVIDORES: Equipos de alto rendimiento para servicios web, bases de datos y aplicaciones institucionales. Requieren mantenimiento especializado y monitoreo constante.",
-            "Todos los equipos están registrados en un sistema de inventario con códigos de identificación únicos y cronogramas de mantenimiento específicos.",
+          ],
+          hardwareTable: [
+            { tipo: "Gabinete", marca: "DELL", modelo: "DCSLF", capacidad: "-" },
+            { tipo: "Memoria RAM", marca: "ProMos", modelo: "PC2-5300U", capacidad: "1GB (512MB x2)" },
+            { tipo: "Disco Duro", marca: "Western Digital", modelo: "WD800JD75", capacidad: "80GB" },
+            { tipo: "Tarjeta Madre", marca: "Foxconn", modelo: "G33M02", capacidad: "-" },
+            { tipo: "Unidad CD/DVD", marca: "-", modelo: "DVD", capacidad: "-" },
+            { tipo: "Fuente de Poder", marca: "Delta Electronics", modelo: "DPS250AB-28", capacidad: "250W" },
+            { tipo: "Procesador", marca: "Intel", modelo: "Celeron 430", capacidad: "1.80 GHz" },
+            { tipo: "Monitor", marca: "DELL", modelo: "E157FPb", capacidad: "-" },
+          ],
+          softwareTable: [
+            { tipo: "Sistema Operativo", nombre: "Windows 7 Ultimate", version: "-" },
+            { tipo: "Sistema Ofimático", nombre: "Microsoft Office 2013", version: "15.0.4420.101" },
+            { tipo: "Compresor", nombre: "WinRAR", version: "3.90" },
+            { tipo: "Lector PDF", nombre: "Adobe Reader XI", version: "11.0.10.32" },
+            { tipo: "Navegador", nombre: "Firefox Quantum", version: "58.0.2 32 bits" },
           ],
         };
 
@@ -746,6 +760,58 @@ content: [
               <p className="text-foreground leading-relaxed text-justify mb-6">
                 {content.content[0]}
               </p>
+
+              {/* Hardware Table */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                <h3 className="font-bold text-foreground mb-4 text-left text-lg">Especificaciones de Hardware</h3>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="font-bold">Tipo de Componente</TableHead>
+                        <TableHead className="font-bold">Marca</TableHead>
+                        <TableHead className="font-bold">Modelo</TableHead>
+                        <TableHead className="font-bold">Capacidad</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {content.hardwareTable?.map((item: any, idx: number) => (
+                        <TableRow key={idx}>
+                          <TableCell className="font-medium">{item.tipo}</TableCell>
+                          <TableCell>{item.marca}</TableCell>
+                          <TableCell>{item.modelo}</TableCell>
+                          <TableCell>{item.capacidad}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+
+              {/* Software Table */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                <h3 className="font-bold text-foreground mb-4 text-left text-lg">Especificaciones de Software</h3>
+                <div className="overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="font-bold">Tipo de Software</TableHead>
+                        <TableHead className="font-bold">Nombre</TableHead>
+                        <TableHead className="font-bold">Versión</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {content.softwareTable?.map((item: any, idx: number) => (
+                        <TableRow key={idx}>
+                          <TableCell className="font-medium">{item.tipo}</TableCell>
+                          <TableCell>{item.nombre}</TableCell>
+                          <TableCell>{item.version}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
             </>
           ) : activeSection === "introduccion" ? (
             /* Introduction section - all content in one frame without image */
