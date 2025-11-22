@@ -24,6 +24,7 @@ import header from "@/assets/logo.jpg";
 
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
 import estudiante1 from "@/assets/estudiante-1.jpg";
+import estudiante2 from "@/assets/estudiante-2.jpg";
 
 // Componentes individuales
 import gabinete from "@/assets/componentes/gabinete.jpg";
@@ -565,9 +566,11 @@ content: [
         resena: "Estudiante de Trayecto I sección 1 en Informática de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' (UPTA Federico Brito Figueroa), participando activamente en el desarrollo de este manual técnico como parte de su formación académica en el área de tecnología."
       },
       {
-        nombre: "Estudiante 2",
-        foto: equipoDesarrollo,
-        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', contribuyendo con sus conocimientos en el área de informática para la elaboración de este proyecto comunitario."
+        nombre: "Amilkar José Gutiérrez Ramírez",
+        edad: "19",
+        correo: "amilkargutierrez88@gmail.com",
+        foto: estudiante2,
+        resena: "Estudiante del PNF en Informática de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' (UPTA Federico Brito Figueroa), cursante de Trayecto I con preferencias hacia la programación y pensamiento lógico, contribuyendo con sus conocimientos para la elaboración de este proyecto comunitario."
       },
       {
         nombre: "Estudiante 3",
