@@ -23,6 +23,7 @@ import agradecimiento from "@/assets/logo-brito.jpg";
 import header from "@/assets/logo.jpg";
 
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
+import estudiante1 from "@/assets/estudiante-1.jpg";
 
 // Componentes individuales
 import gabinete from "@/assets/componentes/gabinete.jpg";
@@ -556,9 +557,12 @@ content: [
   if (activeSection === "involucrados") {
     const involucrados = [
       {
-        nombre: "Estudiante 1",
-        foto: equipoDesarrollo,
-        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', participando activamente en el desarrollo de este manual técnico como parte de su formación académica en el área de tecnología."
+        nombre: "José Alejandro Palencia Herrera",
+        ci: "31.758.656",
+        edad: "19",
+        correo: "Josealeph2006@gmail.com",
+        foto: estudiante1,
+        resena: "Estudiante de Trayecto I sección 1 en Informática de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' (UPTA Federico Brito Figueroa), participando activamente en el desarrollo de este manual técnico como parte de su formación académica en el área de tecnología."
       },
       {
         nombre: "Estudiante 2",
@@ -610,8 +614,20 @@ content: [
           {/* Cuadro de texto con información del seleccionado */}
           <div className="bg-muted/50 border border-border rounded-lg p-6">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              Reseña Académica
+              Información Académica
             </h3>
+            <div className="space-y-2 mb-4">
+              {involucrados[selectedInvolucrado].ci && (
+                <p className="text-foreground"><strong>C.I.:</strong> {involucrados[selectedInvolucrado].ci}</p>
+              )}
+              {involucrados[selectedInvolucrado].edad && (
+                <p className="text-foreground"><strong>Edad:</strong> {involucrados[selectedInvolucrado].edad}</p>
+              )}
+              {involucrados[selectedInvolucrado].correo && (
+                <p className="text-foreground"><strong>Correo:</strong> {involucrados[selectedInvolucrado].correo}</p>
+              )}
+            </div>
+            <h4 className="text-lg font-semibold text-foreground mb-2">Reseña Académica</h4>
             <p className="text-foreground leading-relaxed text-justify">
               {involucrados[selectedInvolucrado].resena}
             </p>
