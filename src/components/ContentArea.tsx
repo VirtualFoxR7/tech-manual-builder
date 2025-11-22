@@ -960,6 +960,15 @@ content: [
                 </p>
               ))}
             </div>
+          ) : activeSection === "mantenimiento-general" ? (
+            /* Mantenimiento general - first 4 paragraphs in one frame, no image */
+            <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+              {content.content.slice(0, 4).map((paragraph, idx) => (
+                <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           ) : activeSection === "mantenimiento-preventivo" || activeSection === "mantenimiento-correctivo" ? (
             <>
               {/* Single image - Left side */}
@@ -1038,6 +1047,8 @@ content: [
               : activeSection === "equipos-institucion" 
               ? content.content.slice(1)
               : (activeSection === "mantenimiento-preventivo" || activeSection === "mantenimiento-correctivo")
+              ? content.content.slice(4)
+              : activeSection === "mantenimiento-general"
               ? content.content.slice(4)
               : activeSection === "pasos"
               ? content.content.slice(1)
