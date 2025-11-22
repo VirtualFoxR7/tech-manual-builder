@@ -626,6 +626,7 @@ content: [
               Información Académica
             </h3>
             <div className="space-y-2 mb-4">
+              <p className="text-foreground"><strong>Nombre:</strong> {involucrados[selectedInvolucrado].nombre}</p>
               {involucrados[selectedInvolucrado].ci && (
                 <p className="text-foreground"><strong>C.I.:</strong> {involucrados[selectedInvolucrado].ci}</p>
               )}
