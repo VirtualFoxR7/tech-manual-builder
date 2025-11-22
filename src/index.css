@@ -42,6 +42,9 @@ All colors MUST be HSL.
 
     --radius: 0.375rem; /* Subtle rounded corners */
 
+    /* Content frame background - light grayish blue */
+    --content-frame: 210 100% 97%; /* Very light blue #F0F8FF */
+
     /* Sidebar specific colors */
     --sidebar-background: 0 0% 98%; /* Very light gray/white */
     --sidebar-foreground: 210 30% 20%;
