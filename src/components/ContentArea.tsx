@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GlosarioTerminos from "./GlosarioTerminos";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 //import labIntroduccion from "@/assets/lab-introduccion.jpg";
 import universidadJardin from "@/assets/universidad-jardin.jpg";
 import universidadEntrada from "@/assets/universidad-entrada.jpg";
@@ -623,7 +624,7 @@ content: [
     );
   }
 
-  // Special render for Preguntas Frecuentes
+  // Special render for Preguntas Frecuentes with Accordion
   if (activeSection === "preguntas-frecuentes" && 'preguntas' in content) {
     return (
       <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
@@ -632,29 +633,34 @@ content: [
             {content.title}
           </h2>
           
-          <div className="space-y-6">
+          <Accordion type="single" collapsible className="w-full space-y-4">
             {content.preguntas.map((item: any, idx: number) => (
-              <div key={idx} className="bg-content-frame border border-border/30 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-foreground mb-4">
+              <AccordionItem 
+                key={idx} 
+                value={`item-${idx}`}
+                className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+              >
+                <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
                   {item.pregunta}
-                </h3>
-                
-                <div className="space-y-3">
-                  <div>
-                    <p className="text-foreground">
-                      <strong>Problema:</strong> {item.problema}
-                    </p>
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 pt-2">
+                  <div className="space-y-4">
+                    <div className="bg-muted/30 rounded-md p-4">
+                      <p className="text-foreground">
+                        <strong className="text-primary">Problema:</strong> {item.problema}
+                      </p>
+                    </div>
+                    
+                    <div className="bg-muted/30 rounded-md p-4">
+                      <p className="text-foreground whitespace-pre-line">
+                        <strong className="text-primary">Solución:</strong> {item.solucion}
+                      </p>
+                    </div>
                   </div>
-                  
-                  <div>
-                    <p className="text-foreground">
-                      <strong>Solución:</strong> {item.solucion}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
 
           {/* Footer note */}
           <div className="mt-12 pt-6 border-t border-border">
