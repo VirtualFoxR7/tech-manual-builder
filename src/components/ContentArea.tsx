@@ -429,24 +429,49 @@ content: [
       case "preguntas-frecuentes":
         return {
           title: "PREGUNTAS FRECUENTES",
-          content: [
-            "¿Con qué frecuencia debo realizar mantenimiento preventivo?",
-            "Se recomienda realizar mantenimiento preventivo cada 3 a 6 meses, dependiendo del uso y las condiciones ambientales del equipo.",
-            "¿Qué herramientas básicas necesito para mantenimiento?",
-            "Las herramientas básicas incluyen: destornilladores de precisión, brochas, alcohol isopropílico, paño suave, mascarilla y pulsera anti-estática.",
-            "¿Puedo realizar mantenimiento yo mismo o necesito un técnico?",
-            "El mantenimiento general y preventivo básico puede ser realizado por usuarios capacitados siguiendo las instrucciones de este manual. Para mantenimiento correctivo complejo, se recomienda consultar con personal técnico especializado.",
-            "¿Qué debo hacer si mi computadora no enciende?",
-            "Primero verifique las conexiones de energía, luego revise que el interruptor de la fuente de poder esté en la posición correcta. Si el problema persiste, puede ser necesario revisar la fuente de poder o la placa madre.",
-            "¿Cada cuánto debo actualizar el sistema operativo?",
-            "Se recomienda instalar actualizaciones de seguridad tan pronto estén disponibles. Las actualizaciones mayores del sistema operativo pueden realizarse de 1 a 2 veces al año, según las necesidades institucionales.",
-            "¿Cómo sé cuándo cambiar la pasta térmica del procesador?",
-            "La pasta térmica debe cambiarse cada 1-2 años, o antes si nota temperaturas elevadas constantes en el procesador (superiores a 70°C en uso normal).",
-            "¿Es necesario formatear el disco duro regularmente?",
-            "No es necesario formatear regularmente. Solo se recomienda formatear cuando hay problemas graves de rendimiento o infecciones de malware que no se pueden eliminar de otra manera.",
-            "¿Qué hacer con los componentes electrónicos que ya no funcionan?",
-            "Los componentes electrónicos deben ser desechados en puntos de recolección especializados para residuos electrónicos, nunca en la basura común, ya que contienen materiales que pueden contaminar el medio ambiente.",
-          ],
+          content: [],
+          preguntas: [
+            {
+              pregunta: "¿Con qué frecuencia debo realizar mantenimiento preventivo?",
+              problema: "Desconocimiento sobre la periodicidad adecuada para el mantenimiento",
+              solucion: "Se recomienda realizar mantenimiento preventivo cada 3 a 6 meses, dependiendo del uso y las condiciones ambientales del equipo."
+            },
+            {
+              pregunta: "¿Qué herramientas básicas necesito para mantenimiento?",
+              problema: "Falta de conocimiento sobre las herramientas necesarias",
+              solucion: "Las herramientas básicas incluyen: destornilladores de precisión, brochas, alcohol isopropílico, paño suave, mascarilla y pulsera anti-estática."
+            },
+            {
+              pregunta: "¿Puedo realizar mantenimiento yo mismo o necesito un técnico?",
+              problema: "Dudas sobre la capacidad técnica requerida",
+              solucion: "El mantenimiento general y preventivo básico puede ser realizado por usuarios capacitados siguiendo las instrucciones de este manual. Para mantenimiento correctivo complejo, se recomienda consultar con personal técnico especializado."
+            },
+            {
+              pregunta: "¿Qué debo hacer si mi computadora no enciende?",
+              problema: "Falla en el arranque del equipo",
+              solucion: "Primero verifique las conexiones de energía, luego revise que el interruptor de la fuente de poder esté en la posición correcta. Si el problema persiste, puede ser necesario revisar la fuente de poder o la placa madre."
+            },
+            {
+              pregunta: "¿Cada cuánto debo actualizar el sistema operativo?",
+              problema: "Incertidumbre sobre la frecuencia de actualización del software",
+              solucion: "Se recomienda instalar actualizaciones de seguridad tan pronto estén disponibles. Las actualizaciones mayores del sistema operativo pueden realizarse de 1 a 2 veces al año, según las necesidades institucionales."
+            },
+            {
+              pregunta: "¿Cómo sé cuándo cambiar la pasta térmica del procesador?",
+              problema: "Desconocimiento sobre el mantenimiento del sistema de refrigeración",
+              solucion: "La pasta térmica debe cambiarse cada 1-2 años, o antes si nota temperaturas elevadas constantes en el procesador (superiores a 70°C en uso normal)."
+            },
+            {
+              pregunta: "¿Es necesario formatear el disco duro regularmente?",
+              problema: "Confusión sobre la necesidad de formateo periódico",
+              solucion: "No es necesario formatear regularmente. Solo se recomienda formatear cuando hay problemas graves de rendimiento o infecciones de malware que no se pueden eliminar de otra manera."
+            },
+            {
+              pregunta: "¿Qué hacer con los componentes electrónicos que ya no funcionan?",
+              problema: "Desconocimiento sobre el manejo adecuado de residuos electrónicos",
+              solucion: "Los componentes electrónicos deben ser desechados en puntos de recolección especializados para residuos electrónicos, nunca en la basura común, ya que contienen materiales que pueden contaminar el medio ambiente."
+            }
+          ]
         };
 
       case "glosario":
@@ -544,6 +569,50 @@ content: [
           </h2>
           <GlosarioTerminos />
           
+          {/* Footer note */}
+          <div className="mt-12 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
+              Manual Técnico para Mantenimiento de Equipos Computacionales - Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa"
+            </p>
+          </div>
+        </article>
+      </main>
+    );
+  }
+
+  // Special render for Preguntas Frecuentes
+  if (activeSection === "preguntas-frecuentes" && 'preguntas' in content) {
+    return (
+      <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+        <article className="max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            {content.title}
+          </h2>
+          
+          <div className="space-y-6">
+            {content.preguntas.map((item: any, idx: number) => (
+              <div key={idx} className="bg-content-frame border border-border/30 rounded-lg p-6">
+                <h3 className="text-lg font-bold text-foreground mb-4">
+                  {item.pregunta}
+                </h3>
+                
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-foreground">
+                      <strong>Problema:</strong> {item.problema}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <p className="text-foreground">
+                      <strong>Solución:</strong> {item.solucion}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Footer note */}
           <div className="mt-12 pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground italic">
