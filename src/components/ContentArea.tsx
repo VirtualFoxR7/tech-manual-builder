@@ -710,10 +710,14 @@ content: [
                   </div>
                 ))}
               </div>
-              {/* First paragraph below images */}
-              <p className="text-foreground leading-relaxed text-justify mb-6">
-                {content.content[0]}
-              </p>
+              {/* First three paragraphs in one frame */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                {content.content.slice(0, 3).map((paragraph, idx) => (
+                  <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </>
           ) : activeSection === "equipos-institucion" ? (
             <>
@@ -782,7 +786,9 @@ content: [
 
           {/* Remaining content - parsed into blocks */}
           {activeSection !== "introduccion" && (() => {
-            const remainingContent = activeSection === "institucion" || activeSection === "equipos-institucion" 
+            const remainingContent = activeSection === "institucion"
+              ? content.content.slice(3)
+              : activeSection === "equipos-institucion" 
               ? content.content.slice(1) 
               : content.content.slice(1);
             
