@@ -743,6 +743,15 @@ content: [
                 {content.content[0]}
               </p>
             </>
+          ) : activeSection === "introduccion" ? (
+            /* Introduction section - all content in one frame without image */
+            <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+              {content.content.map((paragraph, idx) => (
+                <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           ) : (
             /* Single image - Left side */
             <div className="flex items-start gap-6 mb-6">
@@ -772,7 +781,7 @@ content: [
           )}
 
           {/* Remaining content - parsed into blocks */}
-          {(() => {
+          {activeSection !== "introduccion" && (() => {
             const remainingContent = activeSection === "institucion" || activeSection === "equipos-institucion" 
               ? content.content.slice(1) 
               : content.content.slice(1);
