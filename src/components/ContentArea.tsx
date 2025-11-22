@@ -432,6 +432,56 @@ content: [
           content: [],
           preguntas: [
             {
+              pregunta: "¿Por qué mi computadora está lenta?",
+              problema: "Programas pesados, demasiadas apps abiertas o falta de mantenimiento.",
+              solucion: "Cierra programas no usados, elimina archivos basura, desinstala software innecesario, aumenta la RAM o usa un SSD."
+            },
+            {
+              pregunta: "¿Por qué mi PC se calienta demasiado?",
+              problema: "Ventiladores sucios, mala ventilación o uso intenso.",
+              solucion: "Limpia el polvo, mejora el flujo de aire, usa base refrigerante (laptops) y evita usarla sobre superficies blandas."
+            },
+            {
+              pregunta: "¿Por qué mi computadora no enciende?",
+              problema: "Fallo de energía, cargador dañado, batería agotada o problemas internos.",
+              solucion: "• Verifica cables y enchufes.\n• Cambia de toma eléctrica.\n• Quita batería (si es posible) y reinicia hardware.\n• Si nada funciona, revisar fuente de poder o placa madre."
+            },
+            {
+              pregunta: "¿Por qué no tengo internet?",
+              problema: "Error del router, mala configuración, drivers desactualizados.",
+              solucion: "• Reinicia modem/router.\n• Verifica que el WiFi esté activado.\n• Ejecuta el solucionador de Windows.\n• Actualiza el controlador de red."
+            },
+            {
+              pregunta: "¿Por qué mi pantalla está en negro?",
+              problema: "Fallo de conexión o problemas de tarjeta gráfica.",
+              solucion: "• Revisa el cable de pantalla.\n• Conecta la PC a otro monitor.\n• Actualiza o reinstala los drivers gráficos."
+            },
+            {
+              pregunta: "¿Por qué mi computadora hace ruidos extraños?",
+              problema: "Ventiladores sucios, disco duro dañado o piezas flojas.",
+              solucion: "• Limpia el interior.\n• Asegura tornillos y cables.\n• Si el ruido viene del disco duro, respalda la información de inmediato."
+            },
+            {
+              pregunta: "¿Por qué aparecen virus o ventanas emergentes?",
+              problema: "Navegación insegura, descargas sospechosas o antivirus desactivado.",
+              solucion: "• Ejecuta un análisis completo con un antivirus.\n• Elimina apps desconocidas.\n• Activa firewall y actualiza el sistema."
+            },
+            {
+              pregunta: "¿Por qué mis programas se cierran solos?",
+              problema: "Archivos corruptos, falta de memoria o software incompatible.",
+              solucion: "• Actualiza el programa.\n• Reinstala los programas.\n• Cierra otros programas para liberar memoria."
+            },
+            {
+              pregunta: "¿Por qué mi impresora no imprime desde la computadora?",
+              problema: "Cable desconectado, falta de drivers, papel atascado.",
+              solucion: "• Revisa las conexiones.\n• Verifica que tenga papel y tinta.\n• Actualiza los controladores de la impresora."
+            },
+            {
+              pregunta: "¿Por qué mi PC se reinicia sola?",
+              problema: "Sobrecalentamiento, actualizaciones o fallas de hardware.",
+              solucion: "• Limpia ventiladores.\n• Revisa actualizaciones pendientes.\n• Verifica fuente de poder y memoria RAM."
+            },
+            {
               pregunta: "¿Con qué frecuencia debo realizar mantenimiento preventivo?",
               problema: "Desconocimiento sobre la periodicidad adecuada para el mantenimiento",
               solucion: "Se recomienda realizar mantenimiento preventivo cada 3 a 6 meses, dependiendo del uso y las condiciones ambientales del equipo."
@@ -445,11 +495,6 @@ content: [
               pregunta: "¿Puedo realizar mantenimiento yo mismo o necesito un técnico?",
               problema: "Dudas sobre la capacidad técnica requerida",
               solucion: "El mantenimiento general y preventivo básico puede ser realizado por usuarios capacitados siguiendo las instrucciones de este manual. Para mantenimiento correctivo complejo, se recomienda consultar con personal técnico especializado."
-            },
-            {
-              pregunta: "¿Qué debo hacer si mi computadora no enciende?",
-              problema: "Falla en el arranque del equipo",
-              solucion: "Primero verifique las conexiones de energía, luego revise que el interruptor de la fuente de poder esté en la posición correcta. Si el problema persiste, puede ser necesario revisar la fuente de poder o la placa madre."
             },
             {
               pregunta: "¿Cada cuánto debo actualizar el sistema operativo?",
