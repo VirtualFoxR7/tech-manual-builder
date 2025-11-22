@@ -451,6 +451,72 @@ content: [
 
   const content = getContent();
 
+  // Helper function to parse content into structured blocks
+  const parseContentBlocks = (contentArray: string[]) => {
+    const blocks: Array<{ type: 'subtitle-paragraph' | 'paragraph' | 'list'; subtitle?: string; content: string | string[] }> = [];
+    let i = 0;
+
+    while (i < contentArray.length) {
+      const current = contentArray[i];
+      
+      // Check if it's a list item
+      if (current.trim().startsWith('*')) {
+        const listItems: string[] = [];
+        while (i < contentArray.length && contentArray[i].trim().startsWith('*')) {
+          listItems.push(contentArray[i].trim().substring(1).trim());
+          i++;
+        }
+        blocks.push({ type: 'list', content: listItems });
+        continue;
+      }
+
+      // Check if it looks like a subtitle (shorter, no period at end, not a question)
+      const isSubtitle = current.length < 150 && 
+                        !current.endsWith('.') && 
+                        !current.endsWith('?') &&
+                        !current.includes('¿') &&
+                        current.length > 10;
+
+      if (isSubtitle && i + 1 < contentArray.length) {
+        // Get the next paragraph(s) until we hit another subtitle or list
+        const paragraphs: string[] = [];
+        let j = i + 1;
+        
+        while (j < contentArray.length) {
+          const next = contentArray[j];
+          const isNextSubtitle = next.length < 150 && 
+                                !next.endsWith('.') && 
+                                !next.endsWith('?') &&
+                                !next.includes('¿') &&
+                                next.length > 10;
+          const isNextList = next.trim().startsWith('*');
+          
+          if (isNextSubtitle || isNextList) break;
+          
+          paragraphs.push(next);
+          j++;
+        }
+
+        if (paragraphs.length > 0) {
+          blocks.push({ 
+            type: 'subtitle-paragraph', 
+            subtitle: current,
+            content: paragraphs.join(' ')
+          });
+          i = j;
+        } else {
+          blocks.push({ type: 'paragraph', content: current });
+          i++;
+        }
+      } else {
+        blocks.push({ type: 'paragraph', content: current });
+        i++;
+      }
+    }
+
+    return blocks;
+  };
+
   // Special render for Glosario
   if (activeSection === "glosario") {
     return (
@@ -705,12 +771,47 @@ content: [
             </div>
           )}
 
-          {/* Remaining paragraphs */}
-          {content.content.slice(1).map((paragraph, index) => (
-            <p key={index} className="text-foreground leading-relaxed text-justify">
-              {paragraph}
-            </p>
-          ))}
+          {/* Remaining content - parsed into blocks */}
+          {(() => {
+            const remainingContent = activeSection === "institucion" || activeSection === "equipos-institucion" 
+              ? content.content.slice(1) 
+              : content.content.slice(1);
+            
+            const blocks = parseContentBlocks(remainingContent);
+            
+            return blocks.map((block, index) => {
+              if (block.type === 'subtitle-paragraph') {
+                return (
+                  <div key={index} className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                    <h3 className="font-bold text-foreground mb-3 text-left">
+                      {block.subtitle}:
+                    </h3>
+                    <p className="text-foreground leading-relaxed text-justify">
+                      {block.content}
+                    </p>
+                  </div>
+                );
+              } else if (block.type === 'list') {
+                return (
+                  <div key={index} className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                    <ul className="list-disc list-inside space-y-2 text-foreground">
+                      {(block.content as string[]).map((item, idx) => (
+                        <li key={idx} className="leading-relaxed">{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              } else {
+                return (
+                  <div key={index} className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                    <p className="text-foreground leading-relaxed text-justify">
+                      {block.content}
+                    </p>
+                  </div>
+                );
+              }
+            });
+          })()}
         </div>
 
         {/* Footer note */}
