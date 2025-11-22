@@ -792,6 +792,13 @@ content: [
                 ))}
               </div>
             </>
+          ) : activeSection === "pasos-mantenimiento" ? (
+            /* Pasos section - first paragraph in frame, no image */
+            <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+              <p className="text-foreground leading-relaxed text-justify">
+                {content.content[0]}
+              </p>
+            </div>
           ) : (
             /* Single image - Left side */
             <div className="flex items-start gap-6 mb-6">
@@ -828,6 +835,8 @@ content: [
               ? content.content.slice(1)
               : (activeSection === "mantenimiento-preventivo" || activeSection === "mantenimiento-correctivo")
               ? content.content.slice(4)
+              : activeSection === "pasos-mantenimiento"
+              ? content.content.slice(1)
               : content.content.slice(1);
             
             const blocks = parseContentBlocks(remainingContent);
@@ -855,10 +864,24 @@ content: [
                   </div>
                 );
               } else {
+                // Format step titles in bold for pasos-mantenimiento section
+                const content = block.content as string;
+                if (activeSection === "pasos-mantenimiento" && content.includes(":")) {
+                  const colonIndex = content.indexOf(":");
+                  const title = content.substring(0, colonIndex);
+                  const description = content.substring(colonIndex + 1);
+                  return (
+                    <div key={index} className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                      <p className="text-foreground leading-relaxed text-justify">
+                        <strong>{title}:</strong>{description}
+                      </p>
+                    </div>
+                  );
+                }
                 return (
                   <div key={index} className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
                     <p className="text-foreground leading-relaxed text-justify">
-                      {block.content}
+                      {content}
                     </p>
                   </div>
                 );
