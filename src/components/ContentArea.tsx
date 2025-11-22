@@ -756,6 +756,42 @@ content: [
                 </p>
               ))}
             </div>
+          ) : activeSection === "mantenimiento-preventivo" || activeSection === "mantenimiento-correctivo" ? (
+            <>
+              {/* Single image - Left side */}
+              <div className="flex items-start gap-6 mb-6">
+                <div 
+                  className="relative group cursor-pointer flex-shrink-0"
+                  onClick={() => handleImageClick(sectionImages[activeSection], content.title)}
+                >
+                  <img 
+                    src={sectionImages[activeSection]} 
+                    alt={content.title}
+                    className="w-48 h-48 object-cover rounded-lg border border-border shadow-sm transition-all group-hover:brightness-75"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-background/90 rounded-full p-2 shadow-lg">
+                      <ZoomIn className="w-5 h-5" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* First paragraph alongside image */}
+                <div className="flex-1">
+                  <p className="text-foreground leading-relaxed text-justify">
+                    {content.content[0]}
+                  </p>
+                </div>
+              </div>
+              {/* Initial paragraphs in one frame (paragraphs 2-4 for preventivo/correctivo) */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                {content.content.slice(1, 4).map((paragraph, idx) => (
+                  <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </>
           ) : (
             /* Single image - Left side */
             <div className="flex items-start gap-6 mb-6">
@@ -789,7 +825,9 @@ content: [
             const remainingContent = activeSection === "institucion"
               ? content.content.slice(3)
               : activeSection === "equipos-institucion" 
-              ? content.content.slice(1) 
+              ? content.content.slice(1)
+              : (activeSection === "mantenimiento-preventivo" || activeSection === "mantenimiento-correctivo")
+              ? content.content.slice(4)
               : content.content.slice(1);
             
             const blocks = parseContentBlocks(remainingContent);
