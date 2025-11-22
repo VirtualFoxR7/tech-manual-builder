@@ -25,6 +25,7 @@ import header from "@/assets/logo.jpg";
 import equipoDesarrollo from "@/assets/equipo-desarrollo.jpg";
 import estudiante1 from "@/assets/estudiante-1.jpg";
 import estudiante2 from "@/assets/estudiante-2.jpg";
+import estudiante3 from "@/assets/estudiante-3.jpg";
 
 // Componentes individuales
 import gabinete from "@/assets/componentes/gabinete.jpg";
@@ -559,6 +560,7 @@ content: [
     const involucrados = [
       {
         nombre: "José Alejandro Palencia Herrera",
+        nombreCorto: "José Palencia",
         ci: "31.758.656",
         edad: "19",
         correo: "Josealeph2006@gmail.com",
@@ -567,15 +569,19 @@ content: [
       },
       {
         nombre: "Amilkar José Gutiérrez Ramírez",
+        nombreCorto: "Amilkar Gutiérrez",
         edad: "19",
         correo: "amilkargutierrez88@gmail.com",
         foto: estudiante2,
         resena: "Estudiante del PNF en Informática de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' (UPTA Federico Brito Figueroa), cursante de Trayecto I con preferencias hacia la programación y pensamiento lógico, contribuyendo con sus conocimientos para la elaboración de este proyecto comunitario."
       },
       {
-        nombre: "Estudiante 3",
-        foto: equipoDesarrollo,
-        resena: "Estudiante de primer año de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', comprometido con la excelencia técnica y el servicio a la comunidad a través de este manual de mantenimiento."
+        nombre: "Diana José Altamirano Coraspe",
+        nombreCorto: "Diana Altamirano",
+        edad: "18",
+        correo: "dianaaltamirano740@gmail.com",
+        foto: estudiante3,
+        resena: "Estudiante de Informática I sección 1 ubicado en la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', La Victoria. Participante regular en clases y actividades contando con un rendimiento promedio, empeñada en mejorar. Aún en proceso de desarrollar habilidades técnicas."
       }
     ];
 
@@ -608,7 +614,7 @@ content: [
                 <h3 className={`text-center text-lg font-bold ${
                   selectedInvolucrado === idx ? 'text-white' : 'text-foreground'
                 }`}>
-                  {persona.nombre}
+                  {persona.nombreCorto || persona.nombre}
                 </h3>
               </div>
             ))}
