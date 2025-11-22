@@ -139,10 +139,8 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "El Colegio Brito surge como Institución en el año 1.965, bajo los auspicios de la familia Brito la Sra. Marta y el Sr. Carlos. Comienza solo como preescolar y se van incorporando año tras años los grados subsiguientes hasta diversificado. Desde el año 1986 hasta 2009 se graduaron bachilleres; desde el año 2010 se gradúan en Educación Media General mención Ciencias.",
             "Actualmente contamos con dos sedes: la pionera en la Urb. Bolívar Norte donde funciona 4to. y 5to. año de Educación Media General,  contando con aulas espaciosas con aires acondicionados, auditórium, Gimnasio Cubierto, canchas múltiples, Laboratorios de Física, Química, Biología y Ciencias de la Tierra, Cantina espaciosa. La otra, en la Urb. Morichal, donde funciona desde Maternal hasta 3er. año, en modernas y confortables Instalaciones, con una arquitectura novedosa,  aulas con baños para los más pequeños y aire acondicionado.  Laboratorios de Computación, Física, Química, Biología; además canchas deportivas, cantina y una proveeduría con Fotocopiado.  Adicionalmente a las actividades curriculares, el colegio Brito brinda a sus estudiantes sin costo adicional clases de Inglés, computación, también tenemos clubes de Futbolito, Baloncesto, Voleibol, Promoción y Recepción.",
             "Como ha sido tradición de nuestro colegio, el principio que nos guía es la formación integral de los estudiantes, por tal motivo contamos con un servicio de Psicólogo y una Psicopedagoga que ofrece atención personalizada para dificultades de aprendizaje,  adaptación de grupos, técnicas de estudio y orientación vocacional.",
-            "Agradecimiento: Queremos expresar nuestro más sincero agradecimiento al U.E.P Colegio Brito por su ayuda y donación de los equipos de informática. Gracias por ser el único lugar en recibirnos con todo el apoyo, después de algunas lastimas e inconvenientes, aún así quisieron ayudarnos y con la donación pudimos continuar avanzando en nuestro proyecto, algo que antes resultaba difícil por la falta de recursos. Muchas gracias y agradecemos por a vernos escogidos como nuestra primera comunidad.",
-
   ],
-
+          agradecimientoEspecial: "Queremos expresar nuestro más sincero agradecimiento al U.E.P Colegio Brito por su ayuda y donación de los equipos de informática. Gracias por ser el único lugar en recibirnos con todo el apoyo, después de algunas lastimas e inconvenientes, aún así quisieron ayudarnos y con la donación pudimos continuar avanzando en nuestro proyecto, algo que antes resultaba difícil por la falta de recursos. Muchas gracias y agradecemos por a vernos escogidos como nuestra primera comunidad."
 };
 
       case "mantenimiento":
@@ -1043,6 +1041,8 @@ content: [
               ? content.content.slice(4)
               : activeSection === "pasos"
               ? content.content.slice(1)
+              : activeSection === "agradecimiento"
+              ? content.content.slice(1)
               : content.content.slice(1);
             
             const blocks = parseContentBlocks(remainingContent);
@@ -1094,6 +1094,18 @@ content: [
               }
             });
           })()}
+
+          {/* Special frame for agradecimiento */}
+          {activeSection === "agradecimiento" && content.agradecimientoEspecial && (
+            <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+              <h3 className="font-bold text-foreground mb-3 text-left">
+                Agradecimiento:
+              </h3>
+              <p className="text-foreground leading-relaxed text-justify">
+                {content.agradecimientoEspecial}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Footer note */}
