@@ -115,6 +115,7 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
             "Proporcionar conocimiento técnico respecto a las piezas y componentes tanto físicos como partes del sistema operativo.",
             "Guiar paso a paso en el proceso de mantenimiento para así cometer la mínima cantidad de errores a la hora de aplicar el mantenimiento."
           ],
+          razonManual: "La Universidad Politécnica Territorial del Estado Aragua Federico Brito Figueroa cuenta con un valioso patrimonio tecnológico que requiere cuidado constante y profesional. Este manual surge ante la necesidad de democratizar el conocimiento técnico, permitiendo que estudiantes, docentes y personal administrativo participen activamente en la preservación de nuestros equipos computacionales. La ausencia de protocolos estandarizados genera deterioro prematuro, costos elevados de reparación y pérdida de tiempo académico. Por ello, esta guía no solo busca enseñar procedimientos técnicos, sino cultivar una cultura de responsabilidad compartida hacia los recursos institucionales, garantizando que nuestra comunidad universitaria cuente con herramientas tecnológicas funcionales y duraderas que impulsen la excelencia educativa.",
           content: [
             "El presente manual técnico tiene como objetivo proporcionar una guía completa y detallada para el mantenimiento de equipos computacionales en entornos institucionales. Este documento ha sido elaborado considerando las mejores prácticas de la industria y las necesidades específicas de nuestra comunidad educativa.",
             "A través de este manual, se busca establecer procedimientos estandarizados que permitan mantener en óptimas condiciones el equipamiento tecnológico, prolongar su vida útil y garantizar su funcionamiento eficiente.",
@@ -1071,6 +1072,25 @@ content: [
                           </li>
                         ))}
                       </ol>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              )}
+
+              {/* Razón de este Manual */}
+              {content.razonManual && (
+                <Accordion type="single" collapsible className="w-full mb-4">
+                  <AccordionItem 
+                    value="razon-manual"
+                    className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                  >
+                    <AccordionTrigger className="text-xl font-bold text-primary hover:text-primary/80 py-4 hover:no-underline justify-center">
+                      Razón de este Manual
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 pt-2">
+                      <p className="text-foreground leading-relaxed text-justify">
+                        {content.razonManual}
+                      </p>
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
