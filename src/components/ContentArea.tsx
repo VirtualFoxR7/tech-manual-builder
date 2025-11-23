@@ -393,17 +393,11 @@ content: [
       case "equipo-desarrollo":
         return {
           title: "EQUIPO DE DESARROLLO DEL PROYECTO",
-          content: [
-            "Los Desarrolladores De Este Manual Técnico ha sido desarrollado por un equipo multidisciplinario de estudiantes y docentes de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa', con el objetivo de proporcionar una herramienta útil para la comunidad universitaria. ",
+          content: [ 
             "El equipo ha trabajado en la investigación, recopilación y sistematización de información técnica relevante, consultando diversas fuentes especializadas y aplicando conocimientos adquiridos durante la formación académica.",
-            "COORDINACIÓN TÉCNICA: Responsable de la estructura general del manual y validación técnica de procedimientos.",
-            "INVESTIGACIÓN Y CONTENIDO: Encargado de la recopilación y redacción de información técnica actualizada.",
-            "DISEÑO Y FORMATO: Responsable de la presentación visual y organización del contenido para facilitar su consulta.",
-            " * Jose Palencia",
-            " * Amilkar Gutierrez",
-            " * Diana Altamirano",
-            "Agradecemos a todos los miembros del equipo por su dedicación y compromiso en la elaboración de este importante recurso para nuestra comunidad universitaria.",
-            
+            "MODIFICACIÓN MANUAL: Responsable de la edición y ajuste del manual - José Palencia.",
+            "INVESTIGACIÓN Y CONTENIDO: Encargado de la recopilación y redacción de información técnica actualizada - Diana Altamirano",
+            "DISEÑO Y FORMATO: Responsable de la presentación visual y organización del contenido para facilitar su consulta - Amilkar Gutiérrez",            
             
           ],
         };
