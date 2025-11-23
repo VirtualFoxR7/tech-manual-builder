@@ -121,15 +121,13 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           content: [
             "La Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' es una institución de educación superior comprometida con la formación integral de profesionales en diversas áreas del conocimiento tecnológico y científico.",
             "Nuestra comunidad universitaria cuenta con modernos laboratorios de computación y equipamiento tecnológico de última generación, los cuales requieren un mantenimiento adecuado para garantizar su funcionamiento óptimo.",
-          "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
-            "Reseña Historica",
-            "Universidad Politécnica Territorial de Aragua “Federico Brito Figueroa” — Antes conocida como “Instituto Universitario Experimental De Tecnología De La Victoria” — es una institución académica de grado universitario cuya cede principal está localizada en La Victoria estado Aragua, en la Avenida Universidad junto al comando de la Fuerza Armada Nacional (FAN)",
-            "El Instituto Universitario Experimental de tecnología de La Victoria fue fundado por Decreto Presidencial N° 1.959 del 14 de Diciembre del 1976, y en conformidad con la Ley De Universidades y el Reglamento de los Institutos y Colegios Universitarios según se hace constar en la Gaceta Oficial de La República De Venezuela N° 31.139, expedida el 27 de Diciembre de 1976, dependiendo de la Dirección Sectorial de Educación Superior del Ministerio de Educación. inició sus actividades Académicas de Técnico Superior en Enero del 1978 con las especialidades de Mecánica y Electricidad, junto a las menciones de Electrotecnia, Instrumentación y Control, además de Telecomunicaciones. Posteriormente el Ministerio de Educación determina la integración progresiva de las demás especiales aprobadas por el Consejo Nacional de Universidades. Desde la fecha existió trabajo corporativo entre la institución y las empresas, lo que en su momento permitió un autofinanciamiento parcial para esta casa de estudios, misma que contaba con un repertorio de profesores tanto venezolanos como franceses ",
-            "Durante la década de los noventa, el instituto amplió su repertorio de especialidades disponibles, siendo el año 1992 en el que se integró la especialidad de Informática, seguida por Administración Mención Costos en el 1993, además desde ese año se imparten estudios de postgrado para Técnicos Superiores Universitarios de las especialidades de Electricidad, Mecánica y Gerencia en Sistemas, y Educación",
-            "Con la llegada del año 2010, y según consta en la Gaceta Oficial Extraordinaria N° 5987, decreto 7566, el Instituto Universitario Experimental de Tecnología de La Victoria fue rebautizado como Universidad Politécnica Territorial del Estado Aragua “Federico Brito Figueroa” dentro del marco de la misión Alma Mater del Gobierno Venezolano, con la finalidad de transformar la educación universitaria en el gobierno de Venezuela",
-            
-        ],
-      };
+            "Este manual surge como respuesta a la necesidad de establecer protocolos claros para el cuidado del patrimonio tecnológico institucional, involucrando a toda la comunidad en el proceso de preservación de estos recursos.",
+          ],
+          misionVision: {
+            mision: "Contribuir activamente al desarrollo endógeno integral y sustentable en nuestra área de influencia territorial, con la participación activa y permanente del Poder Popular, abarcando múltiples campos de estudios, bajo enfoques inter y transdisciplinarios, para abordar los problemas y retos de su contexto territorial, de acuerdo con las necesidades del pueblo.",
+            vision: "Desarrollar capacidades científico-tecnológicas vinculadas con las necesidades del pueblo, en el marco de la transformación del sistema de educación universitaria, hacia un nuevo modelo de relación entre el sector productivo y la Universidad, que sea funcional al desarrollo humanístico, social y económico de la nación."
+          }
+        };
 
       case "agradecimiento":
         return {
@@ -525,6 +523,14 @@ content: [
           isGlosario: true,
         };
 
+      case "conclusion":
+        return {
+          title: "CONCLUSIÓN",
+          content: [
+            "A lo largo de este manual hemos visto como está estructurada una computadora, así mismo se han brindado las bases para la realización del mantenimiento a las mismas. Aún así, este tema no debería ser tomado a la ligera, las computadoras son maquinas muy potentes que lo largo de la historia nos han ayudado a agilizar e incluso automatizar procesos que antes tomaban mucho más tiempo, sin embargo también son máquinas frágiles que pueden sufrir daños graves si son manipuladas sin el debido cuidado.",
+          ],
+        };
+
       default:
         return {
           title: "INTRODUCCIÓN AL MANUAL",
@@ -876,6 +882,43 @@ content: [
                   </p>
                 ))}
               </div>
+
+              {/* Misión y Visión - Side by side accordions */}
+              {content.misionVision && (
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem 
+                      value="mision"
+                      className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                    >
+                      <AccordionTrigger className="text-xl font-bold text-primary hover:text-primary/80 py-4 hover:no-underline justify-center">
+                        Misión
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-4 pt-2">
+                        <p className="text-foreground leading-relaxed text-justify">
+                          {content.misionVision.mision}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem 
+                      value="vision"
+                      className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                    >
+                      <AccordionTrigger className="text-xl font-bold text-primary hover:text-primary/80 py-4 hover:no-underline justify-center">
+                        Visión
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-4 pt-2">
+                        <p className="text-foreground leading-relaxed text-justify">
+                          {content.misionVision.vision}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              )}
             </>
           ) : activeSection === "equipos-institucion" ? (
             <>
@@ -957,8 +1000,8 @@ content: [
                 </div>
               </div>
             </>
-          ) : activeSection === "introduccion" ? (
-            /* Introduction section - all content in one frame without image */
+          ) : activeSection === "introduccion" || activeSection === "conclusion" ? (
+            /* Introduction and Conclusion sections - all content in one frame without image */
             <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
               {content.content.map((paragraph, idx) => (
                 <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
@@ -1047,7 +1090,7 @@ content: [
           )}
 
           {/* Remaining content - parsed into blocks */}
-          {activeSection !== "introduccion" && (() => {
+          {activeSection !== "introduccion" && activeSection !== "conclusion" && (() => {
             const remainingContent = activeSection === "institucion"
               ? content.content.slice(3)
               : activeSection === "equipos-institucion" 
