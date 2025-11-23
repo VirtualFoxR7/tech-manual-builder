@@ -54,6 +54,10 @@ children: [
       { id: "glosario", title: "Glosario de términos" },
     ],
   },
+  {
+    id: "conclusion",
+    title: "Conclusión",
+  },
 ];
 
 interface SidebarProps {
