@@ -1023,8 +1023,17 @@ content: [
               </div>
             </>
           ) : activeSection === "introduccion" ? (
-            /* Introduction section - with accordions before content */
+            /* Introduction section - with accordions after content */
             <>
+              {/* Contenido de introducción */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                {content.content.map((paragraph, idx) => (
+                  <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
               {/* Objetivo del Manual */}
               {content.objetivoManual && (
                 <Accordion type="single" collapsible className="w-full mb-4">
@@ -1066,15 +1075,6 @@ content: [
                   </AccordionItem>
                 </Accordion>
               )}
-
-              {/* Contenido de introducción */}
-              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
-                {content.content.map((paragraph, idx) => (
-                  <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
             </>
           ) : activeSection === "conclusion" ? (
             /* Conclusion section - all content in one frame without image */
