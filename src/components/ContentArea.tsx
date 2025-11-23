@@ -107,6 +107,14 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
       case "introduccion":
         return {
           title: "INTRODUCCIÓN AL MANUAL",
+          objetivoManual: "Servir como guía para enseñar y facilitar el proceso y la ejecución del mantenimiento tanto correctivo como preventivo a una computadora, dando pasos claros y prácticos para mantener el funcionamiento y optimización del equipo.",
+          objetivosEspecificos: [
+            "Conocer la arquitectura y estructura de las computadoras y diferenciar las configuraciones existentes entre hardware y software.",
+            "Identificar fallos tanto internos como externos en la estructura del equipo.",
+            "Identificar las herramientas requeridas para realizar mantenimiento, además de guiar en su correcto uso y aplicación.",
+            "Proporcionar conocimiento técnico respecto a las piezas y componentes tanto físicos como partes del sistema operativo.",
+            "Guiar paso a paso en el proceso de mantenimiento para así cometer la mínima cantidad de errores a la hora de aplicar el mantenimiento."
+          ],
           content: [
             "El presente manual técnico tiene como objetivo proporcionar una guía completa y detallada para el mantenimiento de equipos computacionales en entornos institucionales. Este documento ha sido elaborado considerando las mejores prácticas de la industria y las necesidades específicas de nuestra comunidad educativa.",
             "A través de este manual, se busca establecer procedimientos estandarizados que permitan mantener en óptimas condiciones el equipamiento tecnológico, prolongar su vida útil y garantizar su funcionamiento eficiente.",
@@ -1014,8 +1022,62 @@ content: [
                 </div>
               </div>
             </>
-          ) : activeSection === "introduccion" || activeSection === "conclusion" ? (
-            /* Introduction and Conclusion sections - all content in one frame without image */
+          ) : activeSection === "introduccion" ? (
+            /* Introduction section - with accordions before content */
+            <>
+              {/* Objetivo del Manual */}
+              {content.objetivoManual && (
+                <Accordion type="single" collapsible className="w-full mb-4">
+                  <AccordionItem 
+                    value="objetivo"
+                    className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                  >
+                    <AccordionTrigger className="text-xl font-bold text-primary hover:text-primary/80 py-4 hover:no-underline justify-center">
+                      Objetivo del Manual
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 pt-2">
+                      <p className="text-foreground leading-relaxed text-justify">
+                        {content.objetivoManual}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              )}
+
+              {/* Objetivos Específicos */}
+              {content.objetivosEspecificos && (
+                <Accordion type="single" collapsible className="w-full mb-4">
+                  <AccordionItem 
+                    value="objetivos-especificos"
+                    className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                  >
+                    <AccordionTrigger className="text-xl font-bold text-primary hover:text-primary/80 py-4 hover:no-underline justify-center">
+                      Objetivos Específicos
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 pt-2">
+                      <ol className="list-decimal list-inside space-y-2">
+                        {content.objetivosEspecificos.map((objetivo: string, index: number) => (
+                          <li key={index} className="text-foreground leading-relaxed text-justify">
+                            {objetivo}
+                          </li>
+                        ))}
+                      </ol>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              )}
+
+              {/* Contenido de introducción */}
+              <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+                {content.content.map((paragraph, idx) => (
+                  <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </>
+          ) : activeSection === "conclusion" ? (
+            /* Conclusion section - all content in one frame without image */
             <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
               {content.content.map((paragraph, idx) => (
                 <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
