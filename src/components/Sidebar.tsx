@@ -29,6 +29,7 @@ children: [
       { id: "herramientas", title: "Herramientas necesarias" },
       { id: "seguridad", title: "Medidas de seguridad" },
       { id: "pasos", title: "Pasos Para El Mantenimiento" },
+      { id: "pitidos-error", title: "Pitidos de error" },
     ],
   },
   {

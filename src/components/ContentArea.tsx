@@ -270,6 +270,12 @@ content: [
 
 };
 
+      case "pitidos-error":
+        return {
+          title: "PITIDOS DE ERROR",
+          content: [],
+        };
+
         
 
       case "equipos":
@@ -672,6 +678,149 @@ content: [
               </AccordionItem>
             ))}
           </Accordion>
+
+          {/* Footer note */}
+          <div className="mt-12 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
+              Manual Técnico para Mantenimiento de Equipos Computacionales - Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa"
+            </p>
+          </div>
+        </article>
+      </main>
+    );
+  }
+
+  // Special render for Pitidos de Error
+  if (activeSection === "pitidos-error") {
+    return (
+      <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+        <article className="max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            PITIDOS DE ERROR
+          </h2>
+          
+          <div className="space-y-6 animate-fade-in">
+            {/* Full width accordion: ¿Qué son? */}
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem 
+                value="que-son"
+                className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+              >
+                <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
+                  ¿Qué son?
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 pt-2">
+                  <div className="bg-muted/30 rounded-md p-4 space-y-4">
+                    <p className="text-foreground leading-relaxed">
+                      Los códigos de pitidos en PC son señales acústicas que el equipo emite al encenderse durante la autoprueba POST (Power-On Self-Test) ó (autocomprobación de encendido) para indicar el estado y posibles problemas del hardware. Estos pitidos permiten diagnosticar fallos que impiden el arranque normal del ordenador.
+                    </p>
+                    <p className="text-foreground leading-relaxed">
+                      Cada patrón de pitidos (cantidad y duración) corresponde a un error específico según el fabricante del BIOS de la placa base.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            {/* Side by side accordions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* BIOS AMI */}
+              <Accordion type="single" collapsible>
+                <AccordionItem 
+                  value="bios-ami"
+                  className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
+                    BIOS AMI
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-2">
+                    <div className="bg-muted/30 rounded-md p-4 space-y-4">
+                      <p className="text-foreground leading-relaxed">
+                        Las AMIBIOS es el fabricante más común y popular en equipos de empresas como Apple, Asus, Acer, Dell, Huawei o Microsoft entre muchas otras. Sus códigos de pitidos pueden ser interpretados para diagnosticar problemas específicos en el hardware.
+                      </p>
+                      <ul className="list-disc list-inside space-y-2 text-foreground">
+                        <li><strong>1 pitido corto:</strong> Fallo en el refresco de la RAM, lo que puede indicar que los módulos de RAM no están correctamente instalados o están defectuosos.</li>
+                        <li><strong>2 pitidos cortos:</strong> Problema en la paridad del circuito, sugiriendo un error de configuración o un fallo en la RAM.</li>
+                        <li><strong>3 pitidos cortos:</strong> Fallo en los primeros 64 Kbs de la RAM, que puede implicar un módulo de memoria defectuoso.</li>
+                        <li><strong>4 pitidos cortos:</strong> Error en el System Timer, indicando un posible problema en la placa base.</li>
+                        <li><strong>5 pitidos cortos:</strong> Fallo de proceso, que puede ser causado por un fallo en la CPU o en la placa base.</li>
+                        <li><strong>6 pitidos cortos:</strong> Error en Gate A20 de la controladora del teclado, sugiriendo un problema en el controlador de la CPU o en el teclado.</li>
+                        <li><strong>7 pitidos cortos:</strong> Error de excepción en la memoria virtual, generalmente relacionado con un fallo en la CPU o en la RAM.</li>
+                        <li><strong>8 pitidos cortos:</strong> Fallo en el test de escritura/lectura de memoria, indicando un posible problema en los módulos de RAM.</li>
+                        <li><strong>9 pitidos cortos:</strong> Fallo en la suma de comprobación de la ROM de la BIOS, lo que puede requerir una actualización o reemplazo del chip de la BIOS.</li>
+                        <li><strong>10 pitidos cortos:</strong> Error en el apagado de la escritura/lectura de CMOS, sugiriendo un fallo en la placa base.</li>
+                        <li><strong>11 pitidos cortos:</strong> Error en la memoria cache, lo que puede indicar un problema en la CPU o en la placa base.</li>
+                        <li><strong>1 pitido largo y 2 cortos:</strong> Error con la memoria que forma parte de la tarjeta de vídeo.</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              {/* BIOS Phoenix-Award */}
+              <Accordion type="single" collapsible>
+                <AccordionItem 
+                  value="bios-phoenix"
+                  className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
+                    BIOS Phoenix-Award
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 pt-2">
+                    <div className="bg-muted/30 rounded-md p-4 space-y-4">
+                      <p className="text-foreground leading-relaxed">
+                        Los códigos utilizados por las BIOS de Award y Phoenix, que también llevan años pudiéndose encontrar en varios equipos.
+                      </p>
+                      <ul className="list-disc list-inside space-y-2 text-foreground">
+                        <li><strong>1 pitido corto:</strong> Se ha iniciado el ordenador sin encontrar errores en su diagnóstico inicial.</li>
+                        <li><strong>2 pitidos cortos:</strong> Error que no está especificado por el pitido. La información sobre lo que falla se muestra en pantalla.</li>
+                        <li><strong>Pitido continuo:</strong> No se encuentra o no se reconoce tu memoria RAM o la tarjeta gráfica.</li>
+                        <li><strong>Pitidos cortos que se repiten:</strong> Fallo en la alimentación del sistema.</li>
+                        <li><strong>1 pitido largo y 3 cortos:</strong> Fallo en la memoria RAM, concretamente en los primeros 64 KB de memoria.</li>
+                        <li><strong>1 pitido largo y 8 cortos:</strong> Fallo en el test del adaptador de vídeo, quizá por falta de energía en la tarjeta de vídeo.</li>
+                        <li><strong>Una especie de sirena de dos tonos:</strong> Un problema en el nivel del voltaje o con unos ventiladores de CPU que van demasiado lentos.</li>
+                      </ul>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            {/* Full width accordion: Diagnóstico y Solución */}
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem 
+                value="diagnostico"
+                className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+              >
+                <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
+                  Diagnóstico y Solución De Problemas
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 pt-2">
+                  <div className="bg-muted/30 rounded-md p-4 space-y-4">
+                    <ul className="list-disc list-inside space-y-2 text-foreground">
+                      <li><strong>1 pitido largo:</strong> Error en la memoria RAM.</li>
+                      <li><strong>1 pitido largo y 1 corto:</strong> Error en el funcionamiento de la placa base memoria DRAM.</li>
+                      <li><strong>1 pitido largo y 2 cortos:</strong> Error en la tarjeta gráfica, la tarjeta de vídeo o el monitor.</li>
+                      <li><strong>1 pitido largo y 3 cortos:</strong> Error en el teclado o su controlador, aunque en versiones posteriores puede ser también error por una gráfica no detectada.</li>
+                      <li><strong>3 pitidos largos:</strong> Error de conexión entre la placa base y el teclado.</li>
+                      <li><strong>1 pitido largo y 9 cortos:</strong> Error en la BIOS.</li>
+                      <li><strong>Pitidos de tonos fuertes y bajos:</strong> Un error en el procesador, posiblemente en el sobrecalentamiento.</li>
+                    </ul>
+                    <div className="mt-4 pt-4 border-t border-border/20">
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Verificación física:</p>
+                      <p className="text-foreground leading-relaxed mb-4">
+                        Al escuchar códigos de pitido, es importante verificar físicamente las conexiones del hardware. Comprueba que todos los componentes estén bien conectados y que no haya polvo ni suciedad en los conectores.
+                      </p>
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Consulta del manual:</p>
+                      <p className="text-foreground leading-relaxed">
+                        Siempre consulta el manual de tu placa base o el sitio web del fabricante para obtener información específica sobre los códigos de pitido, ya que pueden variar entre diferentes modelos.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
 
           {/* Footer note */}
           <div className="mt-12 pt-6 border-t border-border">
