@@ -848,9 +848,11 @@ content: [
     <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
       <article className="max-w-5xl">
         {/* Title - Uppercase and left-aligned */}
-        <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
-          {content.title}
-        </h2>
+        {activeSection !== "introduccion" && (
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            {content.title}
+          </h2>
+        )}
 
         {/* Content Area */}
         <div className="space-y-6">
