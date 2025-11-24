@@ -686,11 +686,20 @@ content: [
 
   // Special render for Involucrados
   if (activeSection === "involucrados") {
-    const involucrados = [
+    interface Involucrado {
+      nombre: string;
+      nombreCorto: string;
+      ci?: string;
+      edad: string;
+      correo: string;
+      foto: string;
+      resena: string;
+    }
+    
+    const involucrados: Involucrado[] = [
       {
         nombre: "José Alejandro Palencia Herrera",
         nombreCorto: "José Palencia",
-        ci: "31.758.656",
         edad: "19",
         correo: "Josealeph2006@gmail.com",
         foto: estudiante1,
@@ -699,7 +708,7 @@ content: [
       {
         nombre: "Amilkar José Gutiérrez Ramírez",
         nombreCorto: "Amilkar Gutiérrez",
-        edad: "19",
+        edad: "20",
         correo: "amilkargutierrez88@gmail.com",
         foto: estudiante2,
         resena: "Estudiante del PNF en Informática de la Universidad Politécnica Territorial del Estado Aragua 'Federico Brito Figueroa' (UPTA Federico Brito Figueroa), cursante de Trayecto I con preferencias hacia la programación y pensamiento lógico, contribuyendo con sus conocimientos para la elaboración de este proyecto comunitario."
