@@ -1026,6 +1026,16 @@ content: [
           ) : activeSection === "introduccion" ? (
             /* Introduction section - with accordions after content */
             <>
+              {/* Portada de la sección */}
+              <div className="bg-content-frame border border-border/30 rounded-lg px-8 py-12 mb-6 shadow-lg text-center">
+                <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4 tracking-tight">
+                  Manual Técnico Interactivo
+                </h1>
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80 tracking-wide">
+                  Mantenimiento Correctivo y Preventivo
+                </h2>
+              </div>
+
               {/* Contenido de introducción */}
               <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
                 {content.content.map((paragraph, idx) => (
