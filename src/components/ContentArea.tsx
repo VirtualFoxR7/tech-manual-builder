@@ -779,6 +779,13 @@ content: [
                         <li><strong>1 pitido largo y 3 cortos:</strong> Fallo en la memoria RAM, concretamente en los primeros 64 KB de memoria.</li>
                         <li><strong>1 pitido largo y 8 cortos:</strong> Fallo en el test del adaptador de vídeo, quizá por falta de energía en la tarjeta de vídeo.</li>
                         <li><strong>Una especie de sirena de dos tonos:</strong> Un problema en el nivel del voltaje o con unos ventiladores de CPU que van demasiado lentos.</li>
+                        <li><strong>1 pitido largo:</strong> Error en la memoria RAM.</li>
+                        <li><strong>1 pitido largo y 1 corto:</strong> Error en el funcionamiento de la placa base memoria DRAM.</li>
+                        <li><strong>1 pitido largo y 2 cortos:</strong> Error en la tarjeta gráfica, la tarjeta de vídeo o el monitor.</li>
+                        <li><strong>1 pitido largo y 3 cortos:</strong> Error en el teclado o su controlador, aunque en versiones posteriores puede ser también error por una gráfica no detectada.</li>
+                        <li><strong>3 pitidos largos:</strong> Error de conexión entre la placa base y el teclado.</li>
+                        <li><strong>1 pitido largo y 9 cortos:</strong> Error en la BIOS.</li>
+                        <li><strong>Pitidos de tonos fuertes y bajos:</strong> Un error en el procesador, posiblemente en el sobrecalentamiento.</li>
                       </ul>
                     </div>
                   </AccordionContent>
@@ -797,25 +804,14 @@ content: [
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 pt-2">
                   <div className="bg-muted/30 rounded-md p-4 space-y-4">
-                    <ul className="list-disc list-inside space-y-2 text-foreground">
-                      <li><strong>1 pitido largo:</strong> Error en la memoria RAM.</li>
-                      <li><strong>1 pitido largo y 1 corto:</strong> Error en el funcionamiento de la placa base memoria DRAM.</li>
-                      <li><strong>1 pitido largo y 2 cortos:</strong> Error en la tarjeta gráfica, la tarjeta de vídeo o el monitor.</li>
-                      <li><strong>1 pitido largo y 3 cortos:</strong> Error en el teclado o su controlador, aunque en versiones posteriores puede ser también error por una gráfica no detectada.</li>
-                      <li><strong>3 pitidos largos:</strong> Error de conexión entre la placa base y el teclado.</li>
-                      <li><strong>1 pitido largo y 9 cortos:</strong> Error en la BIOS.</li>
-                      <li><strong>Pitidos de tonos fuertes y bajos:</strong> Un error en el procesador, posiblemente en el sobrecalentamiento.</li>
-                    </ul>
-                    <div className="mt-4 pt-4 border-t border-border/20">
-                      <p className="text-foreground leading-relaxed font-semibold mb-2">Verificación física:</p>
-                      <p className="text-foreground leading-relaxed mb-4">
-                        Al escuchar códigos de pitido, es importante verificar físicamente las conexiones del hardware. Comprueba que todos los componentes estén bien conectados y que no haya polvo ni suciedad en los conectores.
-                      </p>
-                      <p className="text-foreground leading-relaxed font-semibold mb-2">Consulta del manual:</p>
-                      <p className="text-foreground leading-relaxed">
-                        Siempre consulta el manual de tu placa base o el sitio web del fabricante para obtener información específica sobre los códigos de pitido, ya que pueden variar entre diferentes modelos.
-                      </p>
-                    </div>
+                    <p className="text-foreground leading-relaxed font-semibold mb-2">Verificación física:</p>
+                    <p className="text-foreground leading-relaxed mb-4">
+                      Al escuchar códigos de pitido, es importante verificar físicamente las conexiones del hardware. Comprueba que todos los componentes estén bien conectados y que no haya polvo ni suciedad en los conectores.
+                    </p>
+                    <p className="text-foreground leading-relaxed font-semibold mb-2">Consulta del manual:</p>
+                    <p className="text-foreground leading-relaxed">
+                      Siempre consulta el manual de tu placa base o el sitio web del fabricante para obtener información específica sobre los códigos de pitido, ya que pueden variar entre diferentes modelos.
+                    </p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
