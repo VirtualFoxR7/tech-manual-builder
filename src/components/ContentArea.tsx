@@ -2,6 +2,7 @@ import { useState } from "react";
 import GlosarioTerminos from "./GlosarioTerminos";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 //import labIntroduccion from "@/assets/lab-introduccion.jpg";
 import universidadJardin from "@/assets/universidad-jardin.jpg";
 import universidadEntrada from "@/assets/universidad-entrada.jpg";
@@ -437,93 +438,103 @@ content: [
         return {
           title: "PREGUNTAS FRECUENTES",
           content: [],
-          preguntas: [
-            {
-              pregunta: "¿Por qué mi computadora está lenta?",
-              problema: "Programas pesados, demasiadas apps abiertas o falta de mantenimiento.",
-              solucion: "Cierra programas no usados, elimina archivos basura, desinstala software innecesario, aumenta la RAM o usa un SSD."
-            },
-            {
-              pregunta: "¿Por qué mi PC se calienta demasiado?",
-              problema: "Ventiladores sucios, mala ventilación o uso intenso.",
-              solucion: "Limpia el polvo, mejora el flujo de aire, usa base refrigerante (laptops) y evita usarla sobre superficies blandas."
-            },
-            {
-              pregunta: "¿Por qué mi computadora no enciende?",
-              problema: "Fallo de energía, cargador dañado, batería agotada o problemas internos.",
-              solucion: "• Verifica cables y enchufes.\n• Cambia de toma eléctrica.\n• Quita batería (si es posible) y reinicia hardware.\n• Si nada funciona, revisar fuente de poder o placa madre."
-            },
-            {
-              pregunta: "¿Por qué no tengo internet?",
-              problema: "Error del router, mala configuración, drivers desactualizados.",
-              solucion: "• Reinicia modem/router.\n• Verifica que el WiFi esté activado.\n• Ejecuta el solucionador de Windows.\n• Actualiza el controlador de red."
-            },
-            {
-              pregunta: "¿Por qué mi pantalla está en negro?",
-              problema: "Fallo de conexión o problemas de tarjeta gráfica.",
-              solucion: "• Revisa el cable de pantalla.\n• Conecta la PC a otro monitor.\n• Actualiza o reinstala los drivers gráficos."
-            },
-            {
-              pregunta: "¿Por qué mi computadora hace ruidos extraños?",
-              problema: "Ventiladores sucios, disco duro dañado o piezas flojas.",
-              solucion: "• Limpia el interior.\n• Asegura tornillos y cables.\n• Si el ruido viene del disco duro, respalda la información de inmediato."
-            },
-            {
-              pregunta: "¿Por qué aparecen virus o ventanas emergentes?",
-              problema: "Navegación insegura, descargas sospechosas o antivirus desactivado.",
-              solucion: "• Ejecuta un análisis completo con un antivirus.\n• Elimina apps desconocidas.\n• Activa firewall y actualiza el sistema."
-            },
-            {
-              pregunta: "¿Por qué mis programas se cierran solos?",
-              problema: "Archivos corruptos, falta de memoria o software incompatible.",
-              solucion: "• Actualiza el programa.\n• Reinstala los programas.\n• Cierra otros programas para liberar memoria."
-            },
-            {
-              pregunta: "¿Por qué mi impresora no imprime desde la computadora?",
-              problema: "Cable desconectado, falta de drivers, papel atascado.",
-              solucion: "• Revisa las conexiones.\n• Verifica que tenga papel y tinta.\n• Actualiza los controladores de la impresora."
-            },
-            {
-              pregunta: "¿Por qué mi PC se reinicia sola?",
-              problema: "Sobrecalentamiento, actualizaciones o fallas de hardware.",
-              solucion: "• Limpia ventiladores.\n• Revisa actualizaciones pendientes.\n• Verifica fuente de poder y memoria RAM."
-            },
-            {
-              pregunta: "¿Con qué frecuencia debo realizar mantenimiento preventivo?",
-              problema: "Desconocimiento sobre la periodicidad adecuada para el mantenimiento",
-              solucion: "Se recomienda realizar mantenimiento preventivo cada 3 a 6 meses, dependiendo del uso y las condiciones ambientales del equipo."
-            },
-            {
-              pregunta: "¿Qué herramientas básicas necesito para mantenimiento?",
-              problema: "Falta de conocimiento sobre las herramientas necesarias",
-              solucion: "Las herramientas básicas incluyen: destornilladores de precisión, brochas, alcohol isopropílico, paño suave, mascarilla y pulsera anti-estática."
-            },
-            {
-              pregunta: "¿Puedo realizar mantenimiento yo mismo o necesito un técnico?",
-              problema: "Dudas sobre la capacidad técnica requerida",
-              solucion: "El mantenimiento general y preventivo básico puede ser realizado por usuarios capacitados siguiendo las instrucciones de este manual. Para mantenimiento correctivo complejo, se recomienda consultar con personal técnico especializado."
-            },
-            {
-              pregunta: "¿Cada cuánto debo actualizar el sistema operativo?",
-              problema: "Incertidumbre sobre la frecuencia de actualización del software",
-              solucion: "Se recomienda instalar actualizaciones de seguridad tan pronto estén disponibles. Las actualizaciones mayores del sistema operativo pueden realizarse de 1 a 2 veces al año, según las necesidades institucionales."
-            },
-            {
-              pregunta: "¿Cómo sé cuándo cambiar la pasta térmica del procesador?",
-              problema: "Desconocimiento sobre el mantenimiento del sistema de refrigeración",
-              solucion: "La pasta térmica debe cambiarse cada 1-2 años, o antes si nota temperaturas elevadas constantes en el procesador (superiores a 70°C en uso normal)."
-            },
-            {
-              pregunta: "¿Es necesario formatear el disco duro regularmente?",
-              problema: "Confusión sobre la necesidad de formateo periódico",
-              solucion: "No es necesario formatear regularmente. Solo se recomienda formatear cuando hay problemas graves de rendimiento o infecciones de malware que no se pueden eliminar de otra manera."
-            },
-            {
-              pregunta: "¿Qué hacer con los componentes electrónicos que ya no funcionan?",
-              problema: "Desconocimiento sobre el manejo adecuado de residuos electrónicos",
-              solucion: "Los componentes electrónicos deben ser desechados en puntos de recolección especializados para residuos electrónicos, nunca en la basura común, ya que contienen materiales que pueden contaminar el medio ambiente."
-            }
-          ]
+          preguntasPorCategoria: {
+            rendimiento: [
+              {
+                pregunta: "¿Por qué mi computadora está lenta?",
+                problema: "Programas pesados, demasiadas apps abiertas o falta de mantenimiento.",
+                solucion: "Cierra programas no usados, elimina archivos basura, desinstala software innecesario, aumenta la RAM o usa un SSD."
+              },
+              {
+                pregunta: "¿Por qué mi PC se calienta demasiado?",
+                problema: "Ventiladores sucios, mala ventilación o uso intenso.",
+                solucion: "Limpia el polvo, mejora el flujo de aire, usa base refrigerante (laptops) y evita usarla sobre superficies blandas."
+              },
+              {
+                pregunta: "¿Por qué mis programas se cierran solos?",
+                problema: "Archivos corruptos, falta de memoria o software incompatible.",
+                solucion: "• Actualiza el programa.\n• Reinstala los programas.\n• Cierra otros programas para liberar memoria."
+              },
+              {
+                pregunta: "¿Por qué mi PC se reinicia sola?",
+                problema: "Sobrecalentamiento, actualizaciones o fallas de hardware.",
+                solucion: "• Limpia ventiladores.\n• Revisa actualizaciones pendientes.\n• Verifica fuente de poder y memoria RAM."
+              }
+            ],
+            hardware: [
+              {
+                pregunta: "¿Por qué mi computadora no enciende?",
+                problema: "Fallo de energía, cargador dañado, batería agotada o problemas internos.",
+                solucion: "• Verifica cables y enchufes.\n• Cambia de toma eléctrica.\n• Quita batería (si es posible) y reinicia hardware.\n• Si nada funciona, revisar fuente de poder o placa madre."
+              },
+              {
+                pregunta: "¿Por qué mi computadora hace ruidos extraños?",
+                problema: "Ventiladores sucios, disco duro dañado o piezas flojas.",
+                solucion: "• Limpia el interior.\n• Asegura tornillos y cables.\n• Si el ruido viene del disco duro, respalda la información de inmediato."
+              },
+              {
+                pregunta: "¿Por qué mi pantalla está en negro?",
+                problema: "Fallo de conexión o problemas de tarjeta gráfica.",
+                solucion: "• Revisa el cable de pantalla.\n• Conecta la PC a otro monitor.\n• Actualiza o reinstala los drivers gráficos."
+              },
+              {
+                pregunta: "¿Cómo sé cuándo cambiar la pasta térmica del procesador?",
+                problema: "Desconocimiento sobre el mantenimiento del sistema de refrigeración",
+                solucion: "La pasta térmica debe cambiarse cada 1-2 años, o antes si nota temperaturas elevadas constantes en el procesador (superiores a 70°C en uso normal)."
+              },
+              {
+                pregunta: "¿Qué hacer con los componentes electrónicos que ya no funcionan?",
+                problema: "Desconocimiento sobre el manejo adecuado de residuos electrónicos",
+                solucion: "Los componentes electrónicos deben ser desechados en puntos de recolección especializados para residuos electrónicos, nunca en la basura común, ya que contienen materiales que pueden contaminar el medio ambiente."
+              }
+            ],
+            conectividad: [
+              {
+                pregunta: "¿Por qué no tengo internet?",
+                problema: "Error del router, mala configuración, drivers desactualizados.",
+                solucion: "• Reinicia modem/router.\n• Verifica que el WiFi esté activado.\n• Ejecuta el solucionador de Windows.\n• Actualiza el controlador de red."
+              },
+              {
+                pregunta: "¿Por qué mi impresora no imprime desde la computadora?",
+                problema: "Cable desconectado, falta de drivers, papel atascado.",
+                solucion: "• Revisa las conexiones.\n• Verifica que tenga papel y tinta.\n• Actualiza los controladores de la impresora."
+              }
+            ],
+            seguridad: [
+              {
+                pregunta: "¿Por qué aparecen virus o ventanas emergentes?",
+                problema: "Navegación insegura, descargas sospechosas o antivirus desactivado.",
+                solucion: "• Ejecuta un análisis completo con un antivirus.\n• Elimina apps desconocidas.\n• Activa firewall y actualiza el sistema."
+              },
+              {
+                pregunta: "¿Cada cuánto debo actualizar el sistema operativo?",
+                problema: "Incertidumbre sobre la frecuencia de actualización del software",
+                solucion: "Se recomienda instalar actualizaciones de seguridad tan pronto estén disponibles. Las actualizaciones mayores del sistema operativo pueden realizarse de 1 a 2 veces al año, según las necesidades institucionales."
+              },
+              {
+                pregunta: "¿Es necesario formatear el disco duro regularmente?",
+                problema: "Confusión sobre la necesidad de formateo periódico",
+                solucion: "No es necesario formatear regularmente. Solo se recomienda formatear cuando hay problemas graves de rendimiento o infecciones de malware que no se pueden eliminar de otra manera."
+              }
+            ],
+            mantenimiento: [
+              {
+                pregunta: "¿Con qué frecuencia debo realizar mantenimiento preventivo?",
+                problema: "Desconocimiento sobre la periodicidad adecuada para el mantenimiento",
+                solucion: "Se recomienda realizar mantenimiento preventivo cada 3 a 6 meses, dependiendo del uso y las condiciones ambientales del equipo."
+              },
+              {
+                pregunta: "¿Qué herramientas básicas necesito para mantenimiento?",
+                problema: "Falta de conocimiento sobre las herramientas necesarias",
+                solucion: "Las herramientas básicas incluyen: destornilladores de precisión, brochas, alcohol isopropílico, paño suave, mascarilla y pulsera anti-estática."
+              },
+              {
+                pregunta: "¿Puedo realizar mantenimiento yo mismo o necesito un técnico?",
+                problema: "Dudas sobre la capacidad técnica requerida",
+                solucion: "El mantenimiento general y preventivo básico puede ser realizado por usuarios capacitados siguiendo las instrucciones de este manual. Para mantenimiento correctivo complejo, se recomienda consultar con personal técnico especializado."
+              }
+            ]
+          }
         };
 
       case "glosario":
@@ -641,8 +652,39 @@ content: [
     );
   }
 
-  // Special render for Preguntas Frecuentes with Accordion
-  if (activeSection === "preguntas-frecuentes" && 'preguntas' in content) {
+  // Special render for Preguntas Frecuentes with Tabs and Accordion
+  if (activeSection === "preguntas-frecuentes" && 'preguntasPorCategoria' in content) {
+    const renderAccordionForCategory = (preguntas: any[]) => (
+      <Accordion type="single" collapsible className="w-full space-y-4">
+        {preguntas.map((item: any, idx: number) => (
+          <AccordionItem 
+            key={idx} 
+            value={`item-${idx}`}
+            className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+          >
+            <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
+              {item.pregunta}
+            </AccordionTrigger>
+            <AccordionContent className="pb-4 pt-2">
+              <div className="space-y-4">
+                <div className="bg-muted/30 rounded-md p-4">
+                  <p className="text-foreground">
+                    <strong className="text-primary">Problema:</strong> {item.problema}
+                  </p>
+                </div>
+                
+                <div className="bg-muted/30 rounded-md p-4">
+                  <p className="text-foreground whitespace-pre-line">
+                    <strong className="text-primary">Solución:</strong> {item.solucion}
+                  </p>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    );
+
     return (
       <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
         <article className="max-w-5xl">
@@ -650,34 +692,35 @@ content: [
             {content.title}
           </h2>
           
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {content.preguntas.map((item: any, idx: number) => (
-              <AccordionItem 
-                key={idx} 
-                value={`item-${idx}`}
-                className="bg-content-frame border border-border/30 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
-              >
-                <AccordionTrigger className="text-lg font-semibold text-primary hover:text-primary/80 py-4 hover:no-underline">
-                  {item.pregunta}
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 pt-2">
-                  <div className="space-y-4">
-                    <div className="bg-muted/30 rounded-md p-4">
-                      <p className="text-foreground">
-                        <strong className="text-primary">Problema:</strong> {item.problema}
-                      </p>
-                    </div>
-                    
-                    <div className="bg-muted/30 rounded-md p-4">
-                      <p className="text-foreground whitespace-pre-line">
-                        <strong className="text-primary">Solución:</strong> {item.solucion}
-                      </p>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <Tabs defaultValue="rendimiento" className="w-full">
+            <TabsList className="grid w-full grid-cols-5 mb-8">
+              <TabsTrigger value="rendimiento">Rendimiento</TabsTrigger>
+              <TabsTrigger value="hardware">Hardware</TabsTrigger>
+              <TabsTrigger value="conectividad">Conectividad</TabsTrigger>
+              <TabsTrigger value="seguridad">Seguridad</TabsTrigger>
+              <TabsTrigger value="mantenimiento">Mantenimiento</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="rendimiento" className="mt-6">
+              {renderAccordionForCategory(content.preguntasPorCategoria.rendimiento)}
+            </TabsContent>
+            
+            <TabsContent value="hardware" className="mt-6">
+              {renderAccordionForCategory(content.preguntasPorCategoria.hardware)}
+            </TabsContent>
+            
+            <TabsContent value="conectividad" className="mt-6">
+              {renderAccordionForCategory(content.preguntasPorCategoria.conectividad)}
+            </TabsContent>
+            
+            <TabsContent value="seguridad" className="mt-6">
+              {renderAccordionForCategory(content.preguntasPorCategoria.seguridad)}
+            </TabsContent>
+            
+            <TabsContent value="mantenimiento" className="mt-6">
+              {renderAccordionForCategory(content.preguntasPorCategoria.mantenimiento)}
+            </TabsContent>
+          </Tabs>
 
           {/* Footer note */}
           <div className="mt-12 pt-6 border-t border-border">
