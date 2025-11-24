@@ -532,6 +532,7 @@ content: [
           title: "CONCLUSIÓN",
           content: [
             "A lo largo de este manual hemos visto como está estructurada una computadora, así mismo se han brindado las bases para la realización del mantenimiento a las mismas. Aún así, este tema no debería ser tomado a la ligera, las computadoras son maquinas muy potentes que lo largo de la historia nos han ayudado a agilizar e incluso automatizar procesos que antes tomaban mucho más tiempo, sin embargo también son máquinas frágiles que pueden sufrir daños graves si son manipuladas sin el debido cuidado.",
+            "Con esto en mente, por parte de los desarrolladores involucrados detrás de este proyecto instamos a quien lea este manual con el propósito de efectuar un mantenimiento a su equipo por mano propia a mantener toda precaución necesaria para garantizar el bienestar no solo de tu equipo, sino tu bienestar y seguridad propios, muchas suertes en tu mantenimiento, y gracias por leer este manual 🍪",
           ],
         };
 
