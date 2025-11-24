@@ -1109,8 +1109,8 @@ content: [
                 </Accordion>
               )}
             </>
-          ) : activeSection === "conclusion" ? (
-            /* Conclusion section - all content in one frame without image */
+          ) : activeSection === "conclusion" || activeSection === "extras" ? (
+            /* Conclusion and Extras sections - all content in one frame without image */
             <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
               {content.content.map((paragraph, idx) => (
                 <p key={idx} className="text-foreground leading-relaxed text-justify mb-4 last:mb-0">
