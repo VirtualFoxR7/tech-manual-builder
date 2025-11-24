@@ -804,14 +804,33 @@ content: [
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 pt-2">
                   <div className="bg-muted/30 rounded-md p-4 space-y-4">
-                    <p className="text-foreground leading-relaxed font-semibold mb-2">Verificación física:</p>
-                    <p className="text-foreground leading-relaxed mb-4">
-                      Al escuchar códigos de pitido, es importante verificar físicamente las conexiones del hardware. Comprueba que todos los componentes estén bien conectados y que no haya polvo ni suciedad en los conectores.
-                    </p>
-                    <p className="text-foreground leading-relaxed font-semibold mb-2">Consulta del manual:</p>
-                    <p className="text-foreground leading-relaxed">
-                      Siempre consulta el manual de tu placa base o el sitio web del fabricante para obtener información específica sobre los códigos de pitido, ya que pueden variar entre diferentes modelos.
-                    </p>
+                    <div>
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Verificación física:</p>
+                      <p className="text-foreground leading-relaxed mb-4">
+                        Asegúrese de que todos los componentes estén correctamente instalados y conectados. Revise los módulos de RAM, la CPU, la tarjeta gráfica y otros componentes esenciales.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Reemplazo y pruebas:</p>
+                      <p className="text-foreground leading-relaxed mb-4">
+                        Si identifica un componente defectuoso, intente reemplazarlo con uno conocido como funcional para ver si el problema persiste.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Actualización de la BIOS:</p>
+                      <p className="text-foreground leading-relaxed mb-4">
+                        En algunos casos, una actualización de la BIOS puede resolver problemas relacionados con la compatibilidad o errores de software.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <p className="text-foreground leading-relaxed font-semibold mb-2">Consulta del manual:</p>
+                      <p className="text-foreground leading-relaxed">
+                        Siempre consulta el manual de tu placa base o el sitio web del fabricante para obtener información específica sobre los códigos de pitido, ya que pueden variar entre diferentes modelos.
+                      </p>
+                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
