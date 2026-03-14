@@ -134,7 +134,7 @@ const Sidebar = ({ activeSection, onSectionChange, isOpen }: SidebarProps) => {
       {/* Dropdown menu */}
       <aside
         className={`
-          fixed left-0 right-0 top-20 z-40 bg-sidebar-background border-b border-sidebar-border
+          fixed left-0 right-0 top-20 z-40 bg-background border-b border-sidebar-border
           overflow-y-auto max-h-[70vh] shadow-lg
           transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-y-0" : "-translate-y-full pointer-events-none"}
