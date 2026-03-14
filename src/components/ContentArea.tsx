@@ -1351,9 +1351,15 @@ content: [
                 <source src="/km_Video de mantenimiento_540p_60f_20260314_145703.mp4" type="video/mp4" />
                 Tu navegador no soporta la reproducción de video.
               </video>
-              <p className="text-muted-foreground text-sm text-center mt-3 italic">
-                Video de mantenimiento realizado en la UPTA Federico Brito Figueroa
-              </p>
+               <p className="text-muted-foreground text-sm text-center mt-3 italic">
+                 Video de mantenimiento realizado en la UPTA Federico Brito Figueroa
+               </p>
+               <p className="text-muted-foreground text-xs text-center mt-2">
+                 ¿El video no se reproduce? {" "}
+                 <a href="https://youtube.com/watch?v=ZPxGksZup_M&si=308tkkMapkwYQLww" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                   Ver en YouTube
+                 </a>
+               </p>
             </div>
           ) : activeSection === "mantenimiento-general" ? (
             /* Mantenimiento general - first 4 paragraphs in one frame, no image */
