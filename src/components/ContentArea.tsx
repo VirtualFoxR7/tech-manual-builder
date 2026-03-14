@@ -178,6 +178,12 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           ],
         };
 
+      case "video-mantenimiento":
+        return {
+          title: "VIDEO DE MANTENIMIENTO",
+          content: [],
+        };
+
       case "mantenimiento-preventivo":
         return {
           title: "MANTENIMIENTO PREVENTIVO",
@@ -1333,6 +1339,21 @@ content: [
                   {paragraph}
                 </p>
               ))}
+            </div>
+          ) : activeSection === "video-mantenimiento" ? (
+            /* Video de mantenimiento */
+            <div className="bg-content-frame border border-border/30 rounded-lg p-6 mb-4">
+              <video 
+                controls 
+                className="w-full rounded-lg border border-border shadow-sm"
+                preload="metadata"
+              >
+                <source src="/km_Video de mantenimiento_540p_60f_20260314_145703.mp4" type="video/mp4" />
+                Tu navegador no soporta la reproducción de video.
+              </video>
+              <p className="text-muted-foreground text-sm text-center mt-3 italic">
+                Video de mantenimiento realizado en la UPTA Federico Brito Figueroa
+              </p>
             </div>
           ) : activeSection === "mantenimiento-general" ? (
             /* Mantenimiento general - first 4 paragraphs in one frame, no image */
