@@ -15,9 +15,9 @@ const menuItems: MenuItem[] = [
   {
     id: "institucion",
     title: "U.P.T.A. 'Federico Brito Figueroa'",
-
-children: [
-{ id: "agradecimiento", title: "Agradecimiento" }, ]
+    children: [
+      { id: "agradecimiento", title: "Agradecimiento" },
+    ]
   },
   {
     id: "mantenimiento",
@@ -65,9 +65,10 @@ children: [
 interface SidebarProps {
   activeSection: string;
   onSectionChange: (sectionId: string) => void;
+  isOpen: boolean;
 }
 
-const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
+const Sidebar = ({ activeSection, onSectionChange, isOpen }: SidebarProps) => {
   const [expandedItems, setExpandedItems] = useState<string[]>(["mantenimiento", "equipos", "extras", "equipo-desarrollo"]);
 
   const toggleExpand = (itemId: string) => {
@@ -122,16 +123,33 @@ const Sidebar = ({ activeSection, onSectionChange }: SidebarProps) => {
   };
 
   return (
-    <aside className="fixed left-0 top-20 bottom-0 w-72 bg-sidebar-background border-r border-sidebar-border overflow-y-auto">
-      <nav className="py-4">
-        <h2 className="px-4 mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-          Contenido del Manual
-        </h2>
-        <ul className="space-y-1">
-          {menuItems.map((item) => renderMenuItem(item))}
-        </ul>
-      </nav>
-    </aside>
+    <>
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 top-20 bg-black/30 z-30"
+          onClick={() => onSectionChange(activeSection)}
+        />
+      )}
+      {/* Dropdown menu */}
+      <aside
+        className={`
+          fixed left-0 right-0 top-20 z-40 bg-sidebar-background border-b border-sidebar-border
+          overflow-y-auto max-h-[70vh] shadow-lg
+          transition-transform duration-300 ease-in-out
+          ${isOpen ? "translate-y-0" : "-translate-y-full pointer-events-none"}
+        `}
+      >
+        <nav className="py-4">
+          <h2 className="px-4 mb-4 text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+            Contenido del Manual
+          </h2>
+          <ul className="space-y-1">
+            {menuItems.map((item) => renderMenuItem(item))}
+          </ul>
+        </nav>
+      </aside>
+    </>
   );
 };
 
