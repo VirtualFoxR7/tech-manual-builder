@@ -227,14 +227,16 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           title: "HERRAMIENTAS NECESARIAS",
           content: [
             "Para llevar a cabo las tareas antes mencionadas en el punto anterior, las herramientas requeridas serán:",
-
-              "* Set de destornilladores de precisión",
-              "* Juego de brochas de tamaños distintos",
-              "* Alcohol isopropílico/Limpiador de contactos electrónicos",
-              "* Paño suave",
-              "* Mascarilla",
-              "* Pulsera anti-estática",
-              "* Guantes",
+          ],
+          herramientasItems: [
+            { nombre: "Set de destornilladores de precisión", imagen: "/Herramientas/Destornilladores.jpg" },
+            { nombre: "Juego de brochas de tamaños distintos", imagen: "/Herramientas/Cepillo.jpg" },
+            { nombre: "Alcohol isopropílico/Limpiador de contactos electrónicos", imagen: "/Herramientas/Alcohol.jpg" },
+            { nombre: "Paño suave", imagen: "/Herramientas/Paño.jpg" },
+            { nombre: "Mascarilla", imagen: "/Herramientas/Mascarilla.jpg" },
+            { nombre: "Pulsera antiestática", imagen: "/Herramientas/Pulsera antiestática.jpg" },
+            { nombre: "Guantes", imagen: "/Herramientas/Guantes.jpg" },
+            { nombre: "Toallas húmedas", imagen: "/Herramientas/ToallasHumedas.jpg" },
           ],
         };
 
@@ -1057,6 +1059,57 @@ content: [
         </article>
 
         {/* Image Modal */}
+        <ImageModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          imageSrc={selectedImage}
+          imageAlt={selectedImageAlt}
+        />
+      </main>
+    );
+  }
+  // Special render for Herramientas
+  if (activeSection === "herramientas" && 'herramientasItems' in content) {
+    return (
+      <main className="mt-20 p-8 bg-background min-h-screen">
+        <article className="max-w-5xl">
+          <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
+            {content.title}
+          </h2>
+
+          <p className="text-foreground leading-relaxed text-justify mb-8">
+            {content.content[0]}
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {content.herramientasItems.map((item: { nombre: string; imagen: string }, idx: number) => (
+              <div 
+                key={idx}
+                className="bg-content-frame border border-border/30 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                onClick={() => handleImageClick(item.imagen, item.nombre)}
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={item.imagen}
+                    alt={item.nombre}
+                    className="w-full h-full object-cover transition-all hover:scale-105"
+                  />
+                </div>
+                <p className="text-center text-sm font-medium text-foreground p-3">
+                  {item.nombre}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Footer note */}
+          <div className="mt-12 pt-6 border-t border-border">
+            <p className="text-sm text-muted-foreground italic">
+              Manual Técnico para Mantenimiento de Equipos Computacionales - Universidad Politécnica Territorial del Estado Aragua "Federico Brito Figueroa"
+            </p>
+          </div>
+        </article>
+
         <ImageModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
