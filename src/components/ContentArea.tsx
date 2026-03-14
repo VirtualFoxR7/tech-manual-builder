@@ -227,14 +227,16 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           title: "HERRAMIENTAS NECESARIAS",
           content: [
             "Para llevar a cabo las tareas antes mencionadas en el punto anterior, las herramientas requeridas serán:",
-
-              "* Set de destornilladores de precisión",
-              "* Juego de brochas de tamaños distintos",
-              "* Alcohol isopropílico/Limpiador de contactos electrónicos",
-              "* Paño suave",
-              "* Mascarilla",
-              "* Pulsera anti-estática",
-              "* Guantes",
+          ],
+          herramientasItems: [
+            { nombre: "Set de destornilladores de precisión", imagen: "/Herramientas/Destornilladores.jpg" },
+            { nombre: "Juego de brochas de tamaños distintos", imagen: "/Herramientas/Cepillo.jpg" },
+            { nombre: "Alcohol isopropílico/Limpiador de contactos electrónicos", imagen: "/Herramientas/Alcohol.jpg" },
+            { nombre: "Paño suave", imagen: "/Herramientas/Paño.jpg" },
+            { nombre: "Mascarilla", imagen: "/Herramientas/Mascarilla.jpg" },
+            { nombre: "Pulsera antiestática", imagen: "/Herramientas/Pulsera antiestática.jpg" },
+            { nombre: "Guantes", imagen: "/Herramientas/Guantes.jpg" },
+            { nombre: "Toallas húmedas", imagen: "/Herramientas/ToallasHumedas.jpg" },
           ],
         };
 
