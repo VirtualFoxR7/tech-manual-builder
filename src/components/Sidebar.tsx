@@ -24,6 +24,7 @@ children: [
     title: "Mantenimiento",
     children: [
       { id: "mantenimiento-general", title: "Mantenimiento general" },
+      { id: "video-mantenimiento", title: "Video de mantenimiento" },
       { id: "mantenimiento-preventivo", title: "Mantenimiento preventivo" },
       { id: "mantenimiento-correctivo", title: "Mantenimiento correctivo" },
       { id: "herramientas", title: "Herramientas necesarias" },

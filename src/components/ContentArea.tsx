@@ -178,6 +178,12 @@ const ContentArea = ({ activeSection }: ContentAreaProps) => {
           ],
         };
 
+      case "video-mantenimiento":
+        return {
+          title: "VIDEO DE MANTENIMIENTO",
+          content: [],
+        };
+
       case "mantenimiento-preventivo":
         return {
           title: "MANTENIMIENTO PREVENTIVO",
