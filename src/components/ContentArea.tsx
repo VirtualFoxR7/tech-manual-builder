@@ -937,7 +937,7 @@ content: [
     ];
 
     return (
-      <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+      <main className="mt-20 p-8 bg-background min-h-screen">
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             INVOLUCRADOS
