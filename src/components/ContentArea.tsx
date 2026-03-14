@@ -1356,7 +1356,7 @@ content: [
                </p>
                <p className="text-muted-foreground text-xs text-center mt-2">
                  ¿El video no se reproduce? {" "}
-                 <a href="https://youtube.com/watch?v=ZPxGksZup_M&si=308tkkMapkwYQLww" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                 <a href="https://youtu.be/ZPxGksZup_M?si=YTWA53v8lxMob07Z" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
                    Ver en YouTube
                  </a>
                </p>
