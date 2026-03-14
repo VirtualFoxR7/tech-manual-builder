@@ -1068,7 +1068,7 @@ content: [
   }
 
   return (
-    <main className="ml-72 mt-20 p-8 bg-background min-h-screen">
+    <main className="mt-20 p-8 bg-background min-h-screen">
       <article className="max-w-5xl">
         {/* Title - Uppercase and left-aligned */}
         {activeSection !== "introduccion" && (
