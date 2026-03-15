@@ -53,7 +53,7 @@ const LandingPage = () => {
       {/* Title */}
       <div className="px-6 pt-8 pb-6 text-center">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-          Manual Técnico para Mantenimiento de Equipos Computacionales
+          MANTENIMIENTO PREVENTIVO EN EL HARDWARE Y CORRECTIVO EN EL SOFTWARE DE LOS EQUIPOS INFORMATICOS DE LA U.P.T.A. "FEDERICO BRITO FIGUEROA" LOCALIZADA EN LA VICTORIA, ESTADO ARAGUA
         </h1>
 
         {/* Synopsis */}
