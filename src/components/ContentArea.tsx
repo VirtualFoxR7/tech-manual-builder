@@ -676,13 +676,13 @@ content: [
             <AccordionContent className="pb-4 pt-2">
               <div className="space-y-4">
                 <div className="bg-muted/30 rounded-md p-4">
-                  <p className="text-foreground">
+                  <p className="text-foreground text-lg">
                     <strong className="text-primary">Problema:</strong> {item.problema}
                   </p>
                 </div>
                 
                 <div className="bg-muted/30 rounded-md p-4">
-                  <p className="text-foreground whitespace-pre-line">
+                  <p className="text-foreground whitespace-pre-line text-lg">
                     <strong className="text-primary">Solución:</strong> {item.solucion}
                   </p>
                 </div>
