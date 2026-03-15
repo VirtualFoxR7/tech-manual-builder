@@ -42,7 +42,12 @@ const LandingPage = () => {
     <div className="min-h-screen bg-landing-gradient text-white">
       {/* Logo */}
       <div className="pt-6 pl-6">
-        <img src={logo} alt="UPTAEB Logo" className="w-16 h-16 object-contain" />
+        <img
+          src={logo}
+          alt="UPTAEB Logo"
+          className="w-16 h-16 object-contain cursor-pointer"
+          onClick={() => navigate("/manual")}
+        />
       </div>
 
       {/* Title */}

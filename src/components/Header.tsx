@@ -1,4 +1,5 @@
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 interface HeaderProps {
@@ -7,10 +8,11 @@ interface HeaderProps {
 }
 
 const Header = ({ menuOpen, onToggleMenu }: HeaderProps) => {
+  const navigate = useNavigate();
+
   return (
     <header className="fixed top-0 left-0 right-0 h-20 bg-primary z-50 border-b border-primary">
       <div className="h-full px-6 flex items-center justify-between">
-        {/* Hamburger + Institution Name - Left Side */}
         <div className="flex items-center flex-1 gap-3">
           <button
             onClick={onToggleMenu}
@@ -25,8 +27,10 @@ const Header = ({ menuOpen, onToggleMenu }: HeaderProps) => {
           </h1>
         </div>
 
-        {/* Institution Logo - Right Side */}
-        <div className="flex items-center justify-center w-20 h-20 ml-4 flex-shrink-0">
+        <div
+          onClick={() => navigate("/")}
+          className="flex items-center justify-center w-20 h-20 ml-4 flex-shrink-0 cursor-pointer"
+        >
           <img src={logo} alt="UPTAEB Logo" className="w-full h-full object-contain" />
         </div>
       </div>
