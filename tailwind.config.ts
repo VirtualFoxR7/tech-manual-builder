@@ -59,6 +59,9 @@ export default {
         },
         "content-frame": "hsl(var(--content-frame))",
       },
+      backgroundImage: {
+        "landing-gradient": "linear-gradient(135deg, hsl(var(--landing-from)), hsl(var(--landing-to)))",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

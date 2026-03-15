@@ -54,6 +54,10 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 210 100% 20%;
     --sidebar-border: 210 15% 85%;
     --sidebar-ring: 210 100% 20%;
+
+    /* Landing page gradient */
+    --landing-from: 210 100% 15%;
+    --landing-to: 270 60% 18%;
   }
 
   .dark {
