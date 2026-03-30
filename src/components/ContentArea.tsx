@@ -643,7 +643,7 @@ content: [
   // Special render for Glosario
   if (activeSection === "glosario") {
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -657,7 +657,7 @@ content: [
             </p>
           </div>
         </article>
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
 
@@ -695,7 +695,7 @@ content: [
     );
 
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -738,14 +738,14 @@ content: [
             </p>
           </div>
         </article>
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
 
   // Special render for Pitidos de Error
   if (activeSection === "pitidos-error") {
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             PITIDOS DE ERROR
@@ -896,7 +896,7 @@ content: [
             </p>
           </div>
         </article>
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
 
@@ -940,7 +940,7 @@ content: [
     ];
 
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             INVOLUCRADOS
@@ -1004,14 +1004,14 @@ content: [
             </p>
           </div>
         </article>
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
 
   // Special render for Componentes
   if (activeSection === "componentes" && 'componentes' in content) {
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -1066,13 +1066,13 @@ content: [
           imageSrc={selectedImage}
           imageAlt={selectedImageAlt}
         />
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
   // Special render for Herramientas
   if (activeSection === "herramientas" && 'herramientasItems' in content) {
     return (
-      <main className="mt-20 p-8 bg-background min-h-screen">
+      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -1117,12 +1117,12 @@ content: [
           imageSrc={selectedImage}
           imageAlt={selectedImageAlt}
         />
-      </main>
+      {asSection ? </section> : </main>}
     );
   }
 
   return (
-    <main className="mt-20 p-8 bg-background min-h-screen">
+    {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
       <article className="max-w-5xl">
         {/* Title - Uppercase and left-aligned */}
         {activeSection !== "introduccion" && (
@@ -1589,7 +1589,7 @@ content: [
         imageSrc={selectedImage}
         imageAlt={selectedImageAlt}
       />
-    </main>
+    {asSection ? </section> : </main>}
   );
 };
 
