@@ -50,6 +50,7 @@ import { ZoomIn } from "lucide-react";
 
 interface ContentAreaProps {
   activeSection: string;
+  asSection?: boolean;
 }
 
 // Mapping of sections to their corresponding images
