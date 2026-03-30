@@ -92,7 +92,7 @@ const componenteImageMap: Record<string, string> = {
   "ensamble-case": ensambleCase,
   "monitor": monitor
 };
-const ContentArea = ({ activeSection }: ContentAreaProps) => {
+const ContentArea = ({ activeSection, asSection = false }: ContentAreaProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedImageAlt, setSelectedImageAlt] = useState("");
