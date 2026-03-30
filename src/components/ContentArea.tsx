@@ -657,7 +657,7 @@ content: [
             </p>
           </div>
         </article>
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
 
@@ -738,7 +738,7 @@ content: [
             </p>
           </div>
         </article>
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
 
@@ -896,7 +896,7 @@ content: [
             </p>
           </div>
         </article>
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
 
@@ -1004,7 +1004,7 @@ content: [
             </p>
           </div>
         </article>
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
 
@@ -1066,7 +1066,7 @@ content: [
           imageSrc={selectedImage}
           imageAlt={selectedImageAlt}
         />
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
   // Special render for Herramientas
@@ -1117,7 +1117,7 @@ content: [
           imageSrc={selectedImage}
           imageAlt={selectedImageAlt}
         />
-      {asSection ? </section> : </main>}
+      </main>
     );
   }
 
@@ -1589,7 +1589,7 @@ content: [
         imageSrc={selectedImage}
         imageAlt={selectedImageAlt}
       />
-    {asSection ? </section> : </main>}
+    </main>
   );
 };
 
