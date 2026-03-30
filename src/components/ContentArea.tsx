@@ -643,7 +643,7 @@ content: [
   // Special render for Glosario
   if (activeSection === "glosario") {
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -695,7 +695,7 @@ content: [
     );
 
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -745,7 +745,7 @@ content: [
   // Special render for Pitidos de Error
   if (activeSection === "pitidos-error") {
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             PITIDOS DE ERROR
@@ -940,7 +940,7 @@ content: [
     ];
 
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             INVOLUCRADOS
@@ -1011,7 +1011,7 @@ content: [
   // Special render for Componentes
   if (activeSection === "componentes" && 'componentes' in content) {
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -1072,7 +1072,7 @@ content: [
   // Special render for Herramientas
   if (activeSection === "herramientas" && 'herramientasItems' in content) {
     return (
-      {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+      <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
         <article className="max-w-5xl">
           <h2 className="text-3xl font-bold text-foreground mb-6 uppercase">
             {content.title}
@@ -1122,7 +1122,7 @@ content: [
   }
 
   return (
-    {asSection ? <section id={activeSection} className="p-8 bg-background scroll-mt-24"> : <main className="mt-20 p-8 bg-background min-h-screen">}
+    <main className={asSection ? "p-8 bg-background scroll-mt-24" : "mt-20 p-8 bg-background min-h-screen"} {...(asSection ? { id: activeSection, as: 'section' } : {})} >
       <article className="max-w-5xl">
         {/* Title - Uppercase and left-aligned */}
         {activeSection !== "introduccion" && (
